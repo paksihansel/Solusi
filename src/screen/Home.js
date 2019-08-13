@@ -129,29 +129,6 @@ export default class APP extends Component{
         </ScrollView>
 
          {/* Navigation bar*/}
-
-        <View style={{height: 56,  flexDirection: 'row'}}>
-
-            <View style={styles.Containernav}>
-             <Image style={{width: 26, height: 26}} source = {require('./src/icon/home-active.png')}/>
-              <Text style={styles.textnav}>Home</Text>
-            </View>          
-              
-            <View style={styles.Containernav}>
-            <Image style={{width: 26, height: 26}} source = {require('./src/icon/help.png')}/>
-              <Text style={styles.textnav}>help</Text> 
-              </View>
-              
-            <View style={styles.Containernav}>
-            <Image style={{width: 26, height: 26}} source = {require('./src/icon/inbox.png')}/>
-              <Text style={styles.textnav}>inbox</Text> 
-              </View>
-          
-            <View style={styles.Containernav}>
-            <Image style={{width: 26, height: 26}} source = {require('./src/icon/account.png')}/> 
-              <Text style={styles.textnav}>account</Text> 
-              </View>
-        </View>
       </View>
     )
   }
