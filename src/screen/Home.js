@@ -31,7 +31,7 @@ export default class APP extends Component{
           <View style={{marginHorizontal: 17, marginTop: 10}}>
             <View style={{position: 'relative'}}>
               <TextInput placeholder="What do you want?" style={styles.searchbar}/>
-              <Image source={require('./src/icon/search.png')} style={styles.logoStyle}/>
+              <Image source={require('../icon/search.png')} style={styles.logoStyle}/>
             </View>
             <View></View>
           </View>
@@ -66,30 +66,30 @@ export default class APP extends Component{
 
           <View style={styles.containersub}>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('./src/icon/task.png')}/>
+              <Image style={{width: 26, height: 26}} source = {require('../icon/png/task.png')}/>
               <Text style={styles.textnav}>Task</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('./src/icon/png/001-calendar.png')}/>
+              <Image style={{width: 26, height: 26}} source = {require('../icon/png/001-calendar.png')}/>
               <Text style={styles.textnav}>Cuti</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('./src/icon/png/004-music.png')}/>
+              <Image style={{width: 26, height: 26}} source = {require('../icon/png/004-music.png')}/>
               <Text style={styles.textnav}>music</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.containersub}>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('./src/icon/png/003-radio.png')}/>
+              <Image style={{width: 26, height: 26}} source = {require('../icon/png/003-radio.png')}/>
               <Text style={styles.textnav}>Radio</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('./src/icon/png/002-inventory.png')}/>
+              <Image style={{width: 26, height: 26}} source = {require('../icon/png/002-inventory.png')}/>
               <Text style={styles.textnav}>Iventaris</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('./src/icon/home-active.png')}/>
+              <Image style={{width: 26, height: 26}} source = {require('../icon/png/home-active.png')}/>
               <Text style={styles.textnav}>Home</Text>
             </TouchableOpacity>
           </View>
@@ -102,7 +102,7 @@ export default class APP extends Component{
         </View>
 
         <TouchableOpacity style={{flexDirection: 'row', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, backgroundColor: 'white', marginHorizontal: 16, marginTop: 5 }}>
-          <Image style={{ height: 70, width: 70, borderRadius: 6}} source= {require('./src/icon/welcome.png')}/>
+          <Image style={{ height: 70, width: 70, borderRadius: 6}} source= {require('../icon/welcome.png')}/>
         <View style={{flexDirection: 'column', marginHorizontal: 16, flex: 1}}>
           <Text style={{paddingLeft: 5, fontSize: 15, fontWeight: 'bold' }}>Perayaan Untuk Karyawan Baru</Text>
           <Text style={{paddingLeft: 5, marginTop: 10, color: 'grey' }}>Perayaan Untuk Karyawan Baru dari Smk negeri 2 depok sleman</Text>
@@ -110,7 +110,7 @@ export default class APP extends Component{
         </TouchableOpacity>
 
         <TouchableOpacity style={{flexDirection: 'row', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, backgroundColor: 'white', marginHorizontal: 16, marginTop: 5 }}>
-          <Image style={{ height: 70, width: 70, borderRadius: 6}} source= {require('./src/icon/welcome.png')}/>
+          <Image style={{ height: 70, width: 70, borderRadius: 6}} source= {require('../icon/welcome.png')}/>
         <View style={{flexDirection: 'column', marginHorizontal: 16, flex: 1}}>
           <Text style={{paddingLeft: 5, fontSize: 15, fontWeight: 'bold' }}>Perayaan Untuk Karyawan Baru</Text>
           <Text style={{paddingLeft: 5, marginTop: 10, color: 'grey' }}>Perayaan Untuk Karyawan Baru dari Smk negeri 2 depok sleman</Text>
@@ -118,7 +118,7 @@ export default class APP extends Component{
         </TouchableOpacity>
 
         <TouchableOpacity style={{flexDirection: 'row', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, backgroundColor: 'white', marginHorizontal: 16, marginTop: 5 }}>
-          <Image style={{ height: 70, width: 70, borderRadius: 6}} source= {require('./src/icon/welcome.png')}/>
+          <Image style={{ height: 70, width: 70, borderRadius: 6}} source= {require('../icon/welcome.png')}/>
         <View style={{flexDirection: 'column', marginHorizontal: 16, flex: 1}}>
           <Text style={{paddingLeft: 5, fontSize: 15, fontWeight: 'bold' }}>Perayaan Untuk Karyawan Baru</Text>
           <Text style={{paddingLeft: 5, marginTop: 10, color: 'grey' }}>Perayaan Untuk Karyawan Baru dari Smk negeri 2 depok sleman</Text>
