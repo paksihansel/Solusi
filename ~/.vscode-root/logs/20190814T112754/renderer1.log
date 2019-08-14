@@ -1,0 +1,2 @@
+[2019-08-14 11:28:43.315] [renderer1] [error] Error: [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/paksi/project/Solusi/.vscode'
+[2019-08-14 11:28:43.324] [renderer1] [error] [File Watcher (node.js)] Error: ENOENT: no such file or directory, stat '/home/paksi/project/Solusi/.vscode'

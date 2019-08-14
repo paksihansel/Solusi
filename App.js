@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Web from './src/screen/news'
+import Subtask from './src/screen/subtask'
 
 const App = () => {
    return (
-      <Web/>
+      <Subtask/>
    )
 }
 export default App;
