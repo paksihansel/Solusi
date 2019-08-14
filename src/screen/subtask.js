@@ -36,6 +36,11 @@ export default class APP extends Component{
           <Text style={{fontSize: 18, fontWeight: 'bold'}}>Project Khusus</Text>
         </View>
 
+        <View style={{marginTop: 15, paddingLeft: 16}}>
+          <Text style={{fontSize: 18}}>{time}</Text>
+        </View>
+
+
         <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
               <Text>Task 1</Text>
             <View style={{marginTop: 10, paddingBottom: 10 }}>

@@ -38,35 +38,47 @@ export default class APP extends Component{
         
         {/*blokprofile*/} 
         <View style={styles.Containerbox}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.name}>Dewi Ambarwati</Text>
-            <Text style={styles.name}>Frontend</Text>         
-          </View>
+          
           <View style={styles.boxprogress}>
             <Text style={styles.Namebox}>Progress</Text>
             <Text style={styles.Namebox}>{time}</Text>
           </View>
           <ScrollView style={styles.boxperkembangan}>
 
-          <View style={{flexDirection: 'column'}}>
-            <Text style={styles.namatask}>Task 1</Text>
-            <Progress.Bar progress={0.3} width={200} />
-            <Text style={styles.namatask}>Task 2</Text>
-            <Progress.Bar progress={0.9} width={200} />
-            <Text style={styles.namatask}>Task 3</Text>
-            <Progress.Bar progress={0.5} width={200} color={'#3bff71'} />
-            </View>
+          <View style={{flexDirection: 'row', marginHorizontal: 20, justifyContent: 'space-between',paddingRight: 5, paddingTop: 10}}>
+            <Text style={{alignItems: 'center', justifyContent: 'center'}}>Task</Text>
+            <Text style={{alignItems: 'center', justifyContent: 'center'}}>Waiting</Text>
+            <Text style={{alignItems: 'center', justifyContent: 'center'}}>Done</Text>
+          </View>
+          <View style={{flexDirection: 'row', marginHorizontal: 20, justifyContent: 'space-between',paddingTop: 5, paddingBottom: 20}}>
+            <View style={{height: 50, width: 50, backgroundColor: '#73ecef', alignItems: 'center', justifyContent: 'center', borderRadius: 5}}>
+              <Text>50</Text>  
+            </View>  
+
+            <View style={{height: 50, width: 50, backgroundColor: '#73ecef', alignItems: 'center', justifyContent: 'center', borderRadius: 5}}>
+              <Text>50</Text>  
+            </View>      
+
+            <View style={{height: 50, width: 50, backgroundColor: '#73ecef', alignItems: 'center', justifyContent: 'center', borderRadius: 5}}>
+              <Text>50</Text>  
+            </View>  
+    
+          </View>
           </ScrollView>
            
         </View>
 
         {/* Fitur */}
+
+        <View style={{paddingLeft: 20, marginTop: 20}}>
+          <Text style={{fontSize: 16, fontWeight: 'bold'}}>Fitur Solusi</Text>
+        </View>
         
         <View style={styles.containerfitur}>
 
           <View style={styles.containersub}>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('../icon/png/task.png')}/>
+              <Image style={{width: 26, height: 26}} source = {require('../icon/task.png')}/>
               <Text style={styles.textnav}>Task</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
@@ -89,7 +101,7 @@ export default class APP extends Component{
               <Text style={styles.textnav}>Iventaris</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('../icon/png/home-active.png')}/>
+              <Image style={{width: 26, height: 26}} source = {require('../icon/home-active.png')}/>
               <Text style={styles.textnav}>Home</Text>
             </TouchableOpacity>
           </View>
@@ -129,6 +141,33 @@ export default class APP extends Component{
         </ScrollView>
 
          {/* Navigation bar*/}
+      
+         <View style={{height: 56,  flexDirection: 'row'}}>
+
+    <View style={styles.Containernav}>
+      <Image style={{width: 26, height: 26}} source = {require('../icon/home-active.png')}/>
+      <Text style={styles.textnav}>Home</Text>
+    </View>          
+  
+    <View style={styles.Containernav}>
+      <Image style={{width: 26, height: 26}} source = {require('../icon/help.png')}/>
+      <Text style={styles.textnav}>help</Text> 
+    </View>
+  
+    <View style={styles.Containernav}>
+      <Image style={{width: 26, height: 26}} source = {require('../icon/inbox.png')}/>
+      <Text style={styles.textnav}>inbox</Text> 
+    </View>
+
+    <View style={styles.Containernav}>
+      <Image style={{width: 26, height: 26}} source = {require('../icon/account.png')}/> 
+      <Text style={styles.textnav}>account</Text> 
+    </View>
+  </View>
+      
+      
+      
+      
       </View>
     )
   }
@@ -185,9 +224,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     backgroundColor: '#084ba8',
-    borderBottomLeftRadius: 4,
-    borderBottomRightRadius: 4,
-    padding: 15
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
+    padding: 13, borderRadius: 5,
+    marginTop: 20
   },
   boxperkembangan:{
     paddingTop: 5,

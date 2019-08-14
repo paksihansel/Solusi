@@ -27,12 +27,12 @@ export default class APP extends Component{
     return(
       <View style={{flex: 1}}>
        <ScrollView style={{flex: 1, backgroundColor: '#78cbff'}}>
-          <View style={{height: 30, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
+          <View style={{height: 40, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{fontSize: 18, color: 'white'}}>Pofile</Text>
           </View>
 
        <View style={{paddingTop:30, paddingBottom:20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-          <Image source = {require('../icon/Dewi.png')} style={{width: 100, height: 100, borderRadius: 100/2, borderWidth: 3, borderColor: 'black'}}/>
+          <Image source = {require('../icon/Dewi.jpg')} style={{width: 100, height: 100, borderRadius: 100/2, borderWidth: 3, borderColor: 'black'}}/>
        </View>
           <View style={{paddingTop:1, paddingBottom:30, paddingLeft: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column'}}>
             <Text style={{fontSize: 15, fontWeight: 'bold'}}>Nama</Text>
@@ -75,6 +75,16 @@ export default class APP extends Component{
             <View style={{justifyContent: 'center', alignItems: 'center', marginHorizontal: 10,backgroundColor: 'white'}}>
             <TouchableOpacity style={{alignItems: 'center', justifyContent:'center', backgroundColor: '#468ace', marginTop: 20, width: 100, height: 30, borderRadius: 5}}>
               <Text style={{fontSize: 15, fontWeight: 'bold', color: 'white'}}>Edit Profil</Text>
+            </TouchableOpacity>
+             </View>
+
+            <View style={{marginTop: 10, marginBottom: 10, justifyContent: 'center', alignItems: 'center'}}>
+              <Text>ATAU</Text>
+            </View>
+
+             <View style={{justifyContent: 'center', alignItems: 'center', marginHorizontal: 10,backgroundColor: 'white'}}>
+            <TouchableOpacity style={{alignItems: 'center', justifyContent:'center', backgroundColor: '#468ace', width: 100, height: 30, borderRadius: 5}}>
+              <Text style={{fontSize: 15, fontWeight: 'bold', color: 'white'}}>LogOut</Text>
             </TouchableOpacity>
              </View>
 

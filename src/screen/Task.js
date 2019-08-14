@@ -27,11 +27,15 @@ export default class APP extends Component{
     return(
       <View style={{flex: 1}}>
         {/*Searchbar*/}
-        <ScrollView style={{flex: 1, backgroundColor: '#78cbff'}}>
+        <ScrollView style={{flex: 1, backgroundColor: '#78cbff', flexDirection: 'column'}}>
+
         <View style={{height: 40, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{fontSize: 18, color: 'white'}}>Task</Text>
         </View>
-        
+
+        <Image  style={{width:200, height: 100, marginHorizontal: 90}}
+          			source={require('../icon/png/logo.png')}/>
+
         <View style={{marginTop: 15, paddingLeft: 16}}>
           <Text style={{fontSize: 18, fontWeight: 'bold'}}>My Project</Text>
         </View>
