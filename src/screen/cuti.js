@@ -24,8 +24,10 @@ import {
 import DatePicker from 'react-native-datepicker';
 
 
-export default class APP extends Component{
-
+export default class Cuti extends Component{
+  static navigationOptions = {
+    header: null,
+  }
   constructor(props){
     super(props)
     this.state = {date:""}
@@ -146,7 +148,9 @@ export default class APP extends Component{
         </View>
 
             <View style={{justifyContent: 'center', alignItems: 'center', marginHorizontal: 10, marginBottom: 30}}>
-            <TouchableOpacity style={{alignItems: 'center', justifyContent:'center', backgroundColor: '#468ace', marginTop: 30, width: 100, height: 40, borderRadius: 5}}>
+            <TouchableOpacity style={{alignItems: 'center', justifyContent:'center', backgroundColor: '#468ace', marginTop: 30, width: 100, height: 40, borderRadius: 5}}
+            onPress={() => alert('Submit Form Sucsees')}
+            >
               <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>Submit</Text>
             </TouchableOpacity>
           </View>

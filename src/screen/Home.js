@@ -17,12 +17,16 @@ import {
   StatusBar,
   Image,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Button
 } from 'react-native';
 
 import * as Progress from 'react-native-progress';
 
-export default class APP extends Component{
+export default class Home extends Component{
+  static navigationOptions = {
+    header: null,
+  }
   render(){
     return(
       <View style={{flex: 1}}>
@@ -77,11 +81,11 @@ export default class APP extends Component{
         <View style={styles.containerfitur}>
 
           <View style={styles.containersub}>
-            <TouchableOpacity style={styles.fiturbox}>
+            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('Task')} >
               <Image style={{width: 26, height: 26}} source = {require('../icon/task.png')}/>
               <Text style={styles.textnav}>Task</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.fiturbox}>
+            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('Cuti')} >
               <Image style={{width: 26, height: 26}} source = {require('../icon/png/001-calendar.png')}/>
               <Text style={styles.textnav}>Cuti</Text>
             </TouchableOpacity>
@@ -144,25 +148,25 @@ export default class APP extends Component{
       
          <View style={{height: 56,  flexDirection: 'row'}}>
 
-    <View style={styles.Containernav}>
+    <TouchableOpacity style={styles.Containernav}>
       <Image style={{width: 26, height: 26}} source = {require('../icon/home-active.png')}/>
       <Text style={styles.textnav}>Home</Text>
-    </View>          
+    </TouchableOpacity>          
   
-    <View style={styles.Containernav}>
+    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('News')}>
       <Image style={{width: 26, height: 26}} source = {require('../icon/help.png')}/>
       <Text style={styles.textnav}>help</Text> 
-    </View>
+    </TouchableOpacity>
   
-    <View style={styles.Containernav}>
+    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Inbox')}>
       <Image style={{width: 26, height: 26}} source = {require('../icon/inbox.png')}/>
       <Text style={styles.textnav}>inbox</Text> 
-    </View>
+    </TouchableOpacity>
 
-    <View style={styles.Containernav}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/account.png')}/> 
+    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
+      <Image style={{width: 26, height: 26}} source = {require('../icon/account.png')}/>
       <Text style={styles.textnav}>account</Text> 
-    </View>
+    </TouchableOpacity>
   </View>
       
       

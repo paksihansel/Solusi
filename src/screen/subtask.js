@@ -22,14 +22,17 @@ import {
 
 import * as Progress from 'react-native-progress';
 
-export default class APP extends Component{
+export default class SubTask extends Component{
+  static navigationOptions = {
+    header: null,
+  }
   render(){
     return(
       <View style={{flex: 1}}>
         {/*Searchbar*/}
         <ScrollView style={{flex: 1, backgroundColor: '#78cbff'}}>
-        <View style={{height: 40, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={{fontSize: 18, color: 'white'}}>Tugass</Text>
+        <View style={{height: 50, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
+            <Text style={{fontSize: 20, color: 'white'}}>Task</Text>
         </View>
         
         <View style={{marginTop: 15, paddingLeft: 16}}>

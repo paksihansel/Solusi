@@ -1,53 +1,53 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Image, Text }
+import { View, StyleSheet, Image, Text, TouchableOpacity }
 
 from 'react-native'
-import {WebView} from 'react-native-webview'
-const WebViewExample = () => {
-   return (
-      <View style = {styles.container}>
-        <View style = {styles.container}>
-         <WebView
-         source = {{ uri:
-         'https://www.detik.com/' }}
-         />
-        </View>
-        <View style={{height: 56,  flexDirection: 'row'}}>
+import { WebView } from "react-native-webview";
 
-    <View style={styles.Containernav}>
-        <Image style={{width: 26, height: 26}} source = {require('../icon/home.png')}/>
-        <Text style={styles.textnav}>Home</Text>
-    </View>          
-  
-    <View style={styles.Containernav}>
-        <Image style={{width: 26, height: 26}} source = {require('../icon/help-active.png')}/>
-        <Text style={styles.textnav}>help</Text> 
-    </View>
-  
-    <View style={styles.Containernav}>
-        <Image style={{width: 26, height: 26}} source = {require('../icon/inbox.png')}/>
-        <Text style={styles.textnav}>inbox</Text> 
+
+export default class App extends Component {
+  static navigationOptions = {
+    header: null,
+  }
+  render() {
+    return (
+      <View style={styles.container}>
+       <WebView
+        source={{uri: 'https://www.kompas.com/'}}
+        style={{marginTop: 20}}
+      />
+              <View style={{height: 56,  flexDirection: 'row'}}>
+
+  <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
+  <Image style={{width: 26, height: 26}} source = {require('../icon/home.png')}/>
+  <Text style={styles.textnav}>Home</Text>
+  </TouchableOpacity>
+
+  <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('News')} >
+  <Image style={{width: 26, height: 26}} source = {require('../icon/help-active.png')}/>
+  <Text style={styles.textnav}>help</Text>
+  </TouchableOpacity>
+
+  <TouchableOpacity style={styles.Containernav}onPress={() =>this.props.navigation.navigate('Inbox')}>
+  <Image style={{width: 26, height: 26}} source = {require('../icon/inbox.png')}/>
+  <Text style={styles.textnav}>inbox</Text>
+  </TouchableOpacity>
+
+  <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
+  <Image style={{width: 26, height: 26}} source = {require('../icon/account.png')}/>
+  <Text style={styles.textnav}>account</Text>
+  </TouchableOpacity>
     </View>
 
-    <View style={styles.Containernav}>
-        <Image style={{width: 26, height: 26}} source = {require('../icon/account.png')}/> 
-        <Text style={styles.textnav}>account</Text> 
-    </View>
-    </View>
-      
-      
-      
-      
-      
-      
-      
-      
-      </View>
 
-      
-   )
+
+
+
+  </View>
+    )
+  }
 }
-export default WebViewExample;
+
 
 const styles = StyleSheet.create({
     container: {

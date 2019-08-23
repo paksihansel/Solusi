@@ -22,13 +22,16 @@ import {
 
 import * as Progress from 'react-native-progress';
 
-export default class APP extends Component{
+export default class Profile extends Component{
+  static navigationOptions = {
+    header: null,
+  }
   render(){
     return(
       <View style={{flex: 1}}>
        <ScrollView style={{flex: 1, backgroundColor: '#78cbff'}}>
           <View style={{height: 40, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={{fontSize: 18, color: 'white'}}>Pofile</Text>
+            <Text style={{fontSize: 18, color: 'white', fontFamily: 'SF-Compact-Text-Regular'}}>Pofile</Text>
           </View>
 
        <View style={{paddingTop:30, paddingBottom:20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
@@ -99,25 +102,25 @@ export default class APP extends Component{
 
         <View style={{height: 56,  flexDirection: 'row'}}>
 
-            <View style={styles.Containernav}>
-             <Image style={{width: 26, height: 26}} source = {require('../icon/home.png')}/>
-              <Text style={styles.textnav}>Home</Text>
-            </View>          
-              
-            <View style={styles.Containernav}>
-            <Image style={{width: 26, height: 26}} source = {require('../icon/help.png')}/>
-              <Text style={styles.textnav}>help</Text> 
-              </View>
-              
-            <View style={styles.Containernav}>
-            <Image style={{width: 26, height: 26}} source = {require('../icon/inbox.png')}/>
-              <Text style={styles.textnav}>inbox</Text> 
-              </View>
-          
-            <View style={styles.Containernav}>
-            <Image style={{width: 26, height: 26}} source = {require('../icon/account-active.png')}/> 
-              <Text style={styles.textnav}>account</Text> 
-              </View>
+    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
+      <Image style={{width: 26, height: 26}} source = {require('../icon/home.png')}/>
+      <Text style={styles.textnav}>Home</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('News')}>
+      <Image style={{width: 26, height: 26}} source = {require('../icon/help.png')}/>
+      <Text style={styles.textnav}>help</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Inbox')}>
+      <Image style={{width: 26, height: 26}} source = {require('../icon/inbox.png')}/>
+      <Text style={styles.textnav}>inbox</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity style={styles.Containernav}>
+      <Image style={{width: 26, height: 26}} source = {require('../icon/account-active.png')}/>
+      <Text style={styles.textnav}>account</Text>
+    </TouchableOpacity>
         </View>
         </View>
      

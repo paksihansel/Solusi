@@ -22,16 +22,22 @@ import {
 
 import * as Progress from 'react-native-progress';
 
-export default class APP extends Component{
+export default class Task extends Component{
+  static navigationOptions = {
+    header: null,
+  }
   render(){
     return(
       <View style={{flex: 1}}>
         {/*Searchbar*/}
         <ScrollView style={{flex: 1, backgroundColor: '#78cbff', flexDirection: 'column'}}>
 
-        <View style={{height: 40, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
-            <Text style={{fontSize: 18, color: 'white'}}>Task</Text>
+        <View style={{height: 50, backgroundColor: '#4173a5',justifyContent: 'center'}}>
+        <View style={{ alignItems: 'center'}}>
+              <Text style={{fontSize: 20, color: 'white'}}>Task</Text>
+            </View>
         </View>
+
 
         <Image  style={{width:200, height: 100, marginHorizontal: 90}}
           			source={require('../icon/png/logo.png')}/>
@@ -40,7 +46,9 @@ export default class APP extends Component{
           <Text style={{fontSize: 18, fontWeight: 'bold'}}>My Project</Text>
         </View>
 
-        <TouchableOpacity style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
+        <TouchableOpacity style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}
+          onPress={() =>this.props.navigation.navigate('SubTask')}
+        >
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
               <Text>Membangun Web</Text>
             <View style={{width: 150, height: 20, borderRadius: 10, backgroundColor: '#42cf89', alignItems: 'center', justifyContent: 'center'}}>
