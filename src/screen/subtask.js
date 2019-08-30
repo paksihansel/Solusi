@@ -30,8 +30,8 @@ export default class SubTask extends Component{
     return(
       <View style={{flex: 1}}>
         {/*Searchbar*/}
-        <ScrollView style={{flex: 1, backgroundColor: '#78cbff'}}>
-        <View style={{height: 50, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
+        <ScrollView style={{flex: 1, backgroundColor: '#FAFAFA'}}>
+        <View style={{height: 50, backgroundColor: '#48D1CC', alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{fontSize: 20, color: 'white'}}>Task</Text>
         </View>
         
@@ -47,79 +47,25 @@ export default class SubTask extends Component{
         <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
               <Text>Task 1</Text>
             <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
+                <Progress.Bar progress={0.3} width={200} color={'#23C7C6'} style={{backgroundColor: '#E6E6E6'}} />
+            </View>
+        </View>
+
+        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
+              <Text>Task 1</Text>
+            <View style={{marginTop: 10, paddingBottom: 10 }}>
+                <Progress.Bar progress={0.6} width={200} color={'#23C7C6'} style={{backgroundColor: '#E6E6E6'}} />
+            </View>
+        </View>
+
+        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
+              <Text>Task 1</Text>
+            <View style={{marginTop: 10, paddingBottom: 10 }}>
+                <Progress.Bar progress={0.9} width={200} color={'#23C7C6'} style={{backgroundColor: '#E6E6E6'}} />
             </View>
         </View>
         
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
-
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
-
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
-
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
-
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
-
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
-
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
-
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
-
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
-
-        <View style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-              <Text>Task 1</Text>
-            <View style={{marginTop: 10, paddingBottom: 10 }}>
-                <Progress.Bar progress={0.3} width={200} />
-            </View>
-        </View>
+        
 
       
         

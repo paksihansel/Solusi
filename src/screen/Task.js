@@ -21,6 +21,7 @@ import {
 } from 'react-native';
 
 import * as Progress from 'react-native-progress';
+import { Fonts } from "./tabscreen/fonts";
 
 export default class Task extends Component{
   static navigationOptions = {
@@ -30,11 +31,11 @@ export default class Task extends Component{
     return(
       <View style={{flex: 1}}>
         {/*Searchbar*/}
-        <ScrollView style={{flex: 1, backgroundColor: '#78cbff', flexDirection: 'column'}}>
+        <ScrollView style={{flex: 1, backgroundColor: '#FAFAFA', flexDirection: 'column'}}>
 
-        <View style={{height: 50, backgroundColor: '#4173a5',justifyContent: 'center'}}>
+        <View style={{height: 50, backgroundColor: '#48D1CC',justifyContent: 'center'}}>
         <View style={{ alignItems: 'center'}}>
-              <Text style={{fontSize: 20, color: 'white'}}>Task</Text>
+              <Text style={{fontSize: 20, color: 'white', fontFamily: Fonts.Varella}}>Task</Text>
             </View>
         </View>
 

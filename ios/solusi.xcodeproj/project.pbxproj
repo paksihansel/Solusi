@@ -34,6 +34,9 @@
 		BC79AE4307F0488993AEAA16 /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E59807CE95949B2AB44C8C2 /* rubicon-icon-font.ttf */; };
 		3E8138F36BF14725A3B39533 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67702FFDF912424FAE65039D /* SimpleLineIcons.ttf */; };
 		DF3D04FFA2284B4CB14D005A /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1CD1700397254D0188190E3C /* Zocial.ttf */; };
+		8E41FD53FBE8411A920FE27C /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86FBBA788A504287A0D17393 /* VarelaRound-Regular.ttf */; };
+		BEC2816FDC4E4B26BB2C18D4 /* Satisfy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCCFDF1FEA9A4B4D87A2DC43 /* Satisfy-Regular.ttf */; };
+		AF5D4C55ABA444B4958736CC /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84849871C66D4DCAA807DE5A /* Fontisto.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +91,9 @@
 		8E59807CE95949B2AB44C8C2 /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		67702FFDF912424FAE65039D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1CD1700397254D0188190E3C /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		86FBBA788A504287A0D17393 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; name = "VarelaRound-Regular.ttf"; path = "../assets/fonts/VarelaRound-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DCCFDF1FEA9A4B4D87A2DC43 /* Satisfy-Regular.ttf */ = {isa = PBXFileReference; name = "Satisfy-Regular.ttf"; path = "../assets/fonts/Satisfy-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		84849871C66D4DCAA807DE5A /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +223,9 @@
 				8E59807CE95949B2AB44C8C2 /* rubicon-icon-font.ttf */,
 				67702FFDF912424FAE65039D /* SimpleLineIcons.ttf */,
 				1CD1700397254D0188190E3C /* Zocial.ttf */,
+				86FBBA788A504287A0D17393 /* VarelaRound-Regular.ttf */,
+				DCCFDF1FEA9A4B4D87A2DC43 /* Satisfy-Regular.ttf */,
+				84849871C66D4DCAA807DE5A /* Fontisto.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -377,6 +386,9 @@
 				BC79AE4307F0488993AEAA16 /* rubicon-icon-font.ttf in Resources */,
 				3E8138F36BF14725A3B39533 /* SimpleLineIcons.ttf in Resources */,
 				DF3D04FFA2284B4CB14D005A /* Zocial.ttf in Resources */,
+				8E41FD53FBE8411A920FE27C /* VarelaRound-Regular.ttf in Resources */,
+				BEC2816FDC4E4B26BB2C18D4 /* Satisfy-Regular.ttf in Resources */,
+				AF5D4C55ABA444B4958736CC /* Fontisto.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

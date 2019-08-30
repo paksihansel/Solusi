@@ -37,9 +37,9 @@ export default class Cuti extends Component{
   render(){
     return(
       <View style={{flex: 1}}>
-        <ScrollView style={{flex: 1, backgroundColor: '#78cbff', flexDirection: 'column'}}>
+        <ScrollView style={{flex: 1, backgroundColor: '#FAFAFA', flexDirection: 'column'}}>
 
-        <View style={{height: 40, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
+        <View style={{height: 40, backgroundColor: '#48D1CC', alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{fontSize: 20, color: 'white', fontWeight: 'bold'}} >Cuti</Text>
         </View>
 
@@ -148,7 +148,7 @@ export default class Cuti extends Component{
         </View>
 
             <View style={{justifyContent: 'center', alignItems: 'center', marginHorizontal: 10, marginBottom: 30}}>
-            <TouchableOpacity style={{alignItems: 'center', justifyContent:'center', backgroundColor: '#468ace', marginTop: 30, width: 100, height: 40, borderRadius: 5}}
+            <TouchableOpacity style={{alignItems: 'center', justifyContent:'center', backgroundColor: '#6495ED', marginTop: 30, width: 100, height: 40, borderRadius: 5}}
             onPress={() => alert('Submit Form Sucsees')}
             >
               <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>Submit</Text>

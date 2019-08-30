@@ -358,8 +358,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar",
-                                    "checked": true
+                                    "label": "Show &&Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -979,6 +978,10 @@
                 "label": "Ctrl+Shift+T",
                 "userSettingsLabel": "ctrl+shift+t"
             },
+            "workbench.action.openRecent": {
+                "label": "Ctrl+R",
+                "userSettingsLabel": "ctrl+r"
+            },
             "workbench.action.files.save": {
                 "label": "Ctrl+S",
                 "userSettingsLabel": "ctrl+s"
@@ -1021,8 +1024,8 @@
                 "userSettingsLabel": "ctrl+k f"
             },
             "workbench.action.closeWindow": {
-                "label": "Ctrl+W",
-                "userSettingsLabel": "ctrl+w"
+                "label": "Ctrl+Shift+W",
+                "userSettingsLabel": "ctrl+shift+w"
             },
             "workbench.action.quit": {
                 "label": "Ctrl+Q",
@@ -1381,5 +1384,19 @@
     },
     "theme": "vs-dark",
     "themeBackground": "#1e1e1e",
-    "pickerWorkingDir": "/home/paksi/project"
+    "pickerWorkingDir": "/home/paksi/project",
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/paksi/project/Solusi",
+            "backupPath": "/home/paksi/project/Solusi/~/.vscode-root/Backups/49d3077298d06f6407dd496fad811e69",
+            "uiState": {
+                "mode": 0,
+                "x": 171,
+                "y": 57,
+                "width": 1024,
+                "height": 711
+            }
+        },
+        "openedWindows": []
+    }
 }

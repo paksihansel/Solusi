@@ -17,113 +17,124 @@ import {
   StatusBar,
   Image,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert,
+  alertMessage
 } from 'react-native';
 
-import * as Progress from 'react-native-progress';
+import { NavigationActions } from 'react-navigation';
+import { Fonts } from './tabscreen/fonts';
+
 
 export default class Profile extends Component{
+
   static navigationOptions = {
     header: null,
   }
+
+
+  onButtonPress = () => {
+    this.props.navigation.navigate('Home')
+ }
+
   render(){
     return(
       <View style={{flex: 1}}>
-       <ScrollView style={{flex: 1, backgroundColor: '#78cbff'}}>
-          <View style={{height: 40, backgroundColor: '#4173a5', alignItems: 'center', justifyContent: 'center'}}>
+       <ScrollView style={{flex: 1, backgroundColor: '#FAFAFA'}}>
+          <View style={{height: 40, backgroundColor: '#48D1CC', alignItems: 'center', justifyContent: 'center'}}>
             <Text style={{fontSize: 18, color: 'white', fontFamily: 'SF-Compact-Text-Regular'}}>Pofile</Text>
           </View>
 
-       <View style={{paddingTop:30, paddingBottom:20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+       <View style={{paddingTop:30, paddingBottom:20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white',alignItems: 'center', justifyContent: 'center'}}>
           <Image source = {require('../icon/Dewi.jpg')} style={{width: 100, height: 100, borderRadius: 100/2, borderWidth: 3, borderColor: 'black'}}/>
+          <Text style={{fontSize: 15}}>Dewi Ambar sari</Text>
+          <Text style={{fontSize: 15}}s>Frontend</Text>
        </View>
-          <View style={{paddingTop:1, paddingBottom:30, paddingLeft: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column'}}>
-            <Text style={{fontSize: 15, fontWeight: 'bold'}}>Nama</Text>
-            <Text style={{fontSize: 11, color: 'grey', marginTop: 3}}>Dewi Ambarwati</Text>
-            <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 40, marginTop: 4}}/>
 
-            <Text style={{fontSize: 15, fontWeight: 'bold', marginTop: 10}}>Gender</Text>
-            <Text style={{fontSize: 11, color: 'grey', marginTop: 3}}>Shemale</Text>
-            <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 40, marginTop: 4}}/>
+       <View style={{paddingTop:10, paddingBottom:20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column'}}>
+        <View style={{marginLeft: 10}}>
+          <Text style={{fontSize: 20, fontWeight: 'bold', fontFamily: 'VarelaRound-Regular'}}>Detail Profile</Text>
+        </View>
+        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}} 
+          onPress={() =>this.props.navigation.navigate('ProfileUser')}
+          >
+          <Text style={{fontSize: 18, fontFamily: Fonts.Varella}}>Profile User</Text>
+          <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
+        </TouchableOpacity>
+        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}>
+          <Text style={{fontSize: 18}}>Data Keluarga</Text>
+          <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
+        </TouchableOpacity>
+        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}>
+          <Text style={{fontSize: 18}}>Data Perusahaan</Text>
+          <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
+        </TouchableOpacity>
+       </View> 
 
-            <Text style={{fontSize: 15, fontWeight: 'bold', marginTop: 10}}>Phone</Text>
-            <Text style={{fontSize: 11, color: 'grey', marginTop: 3}}>087838638932</Text>
-            <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 40, marginTop: 4}}/>
+       <View style={{paddingTop:10, paddingBottom:20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column'}}>
+        <View style={{marginLeft: 10}}>
+          <Text style={{fontSize: 20, fontWeight: 'bold'}}>Lainnya</Text>
+        </View>
+        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}>
+          <Text style={{fontSize: 18}}>Visi dan Misi</Text>
+          <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
+        </TouchableOpacity>
+        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}>
+          <Text style={{fontSize: 18}}>About</Text>
+          <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
+        </TouchableOpacity>
+        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}>
+          <Text style={{fontSize: 18}}>Setting</Text>
+          <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
+        </TouchableOpacity>
+       </View> 
 
-            <Text style={{fontSize: 15, fontWeight: 'bold', marginTop: 10}}>Address</Text>
-            <Text style={{fontSize: 11, color: 'grey', marginTop: 3}}>Kaliurang city, Yogyakarta</Text>
-            <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 40, marginTop: 4}}/>
-
-            <Text style={{fontSize: 15, fontWeight: 'bold', marginTop: 10}}>Divisi</Text>
-            <Text style={{fontSize: 11, color: 'grey', marginTop: 3}}>Frontend</Text>
-            <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 40, marginTop: 4}}/>
-            <View style={{justifyContent: 'center', alignItems: 'center', marginHorizontal: 10,backgroundColor: 'white'}}>
-            <TouchableOpacity style={{alignItems: 'center', justifyContent:'center', backgroundColor: '#468ace', marginTop: 20, width: 100, height: 30, borderRadius: 5}}>
-              <Text style={{fontSize: 15, fontWeight: 'bold', color: 'white'}}>Edit Profil</Text>
-            </TouchableOpacity>
+       
+        <TouchableOpacity 
+          style={{marginHorizontal: 10, paddingTop:10, paddingBottom:20,  backgroundColor: 'white', marginTop: 10, marginBottom: 10}}
+          onPress={() => Alert.alert(
+            'Logout',
+            alertMessage,
+            [
+              {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
+              {text: 'OK', onPress: () => this.onButtonPress()},
+            ]
+          )}
+          >
+          
+          <View style={{alignItems: 'center', justifyContent: 'center',}}>
+          <Text style={{fontSize: 18}}>Logout</Text>
           </View>
-
-          </View>
-
-
-          <View style={{paddingTop:1, paddingBottom:30, paddingLeft: 10, marginHorizontal: 10, marginTop: 10, backgroundColor: 'white', flexDirection: 'column'}}>
-            <Text style={{fontSize: 18, fontWeight: 'bold', marginTop: 3}}>Account</Text>
-            <Text style={{fontSize: 15, fontWeight: 'bold', marginTop: 15}}>Email</Text>
-            <Text style={{fontSize: 11, color: 'grey', marginTop: 3}}>Dewi123@gmail.com</Text>
-            <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 40, marginTop: 4}}/>
-
-            <Text style={{fontSize: 15, fontWeight: 'bold', marginTop: 10}}>Password</Text>
-            <Text style={{fontSize: 11, color: 'grey', marginTop: 3}}>**********</Text>
-            <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 40, marginTop: 4}}/>
-            <View style={{justifyContent: 'center', alignItems: 'center', marginHorizontal: 10,backgroundColor: 'white'}}>
-            <TouchableOpacity style={{alignItems: 'center', justifyContent:'center', backgroundColor: '#468ace', marginTop: 20, width: 100, height: 30, borderRadius: 5}}>
-              <Text style={{fontSize: 15, fontWeight: 'bold', color: 'white'}}>Edit Profil</Text>
-            </TouchableOpacity>
-             </View>
-
-            <View style={{marginTop: 10, marginBottom: 10, justifyContent: 'center', alignItems: 'center'}}>
-              <Text>ATAU</Text>
-            </View>
-
-             <View style={{justifyContent: 'center', alignItems: 'center', marginHorizontal: 10,backgroundColor: 'white'}}>
-            <TouchableOpacity style={{alignItems: 'center', justifyContent:'center', backgroundColor: '#468ace', width: 100, height: 30, borderRadius: 5}}>
-              <Text style={{fontSize: 15, fontWeight: 'bold', color: 'white'}}>LogOut</Text>
-            </TouchableOpacity>
-             </View>
+        </TouchableOpacity>
+  
 
 
-            
-          </View>
+
 
        </ScrollView>
 
         
          {/* Navigation bar*/}
 
-        <View style={{height: 56,  flexDirection: 'row'}}>
+         <View style={{height: 59,  flexDirection: 'row'}}>
 
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/home.png')}/>
-      <Text style={styles.textnav}>Home</Text>
-    </TouchableOpacity>
+<TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
+  <Image style={{width: 22, height: 22}} source = {require('../menu/home-abu.png')}/>
+  <Text style={styles.textnav}>Home</Text>
+</TouchableOpacity>          
 
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('News')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/help.png')}/>
-      <Text style={styles.textnav}>help</Text>
-    </TouchableOpacity>
+<TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Inbox')}>
+  <Image style={{width: 22, height: 22}} source = {require('../menu/inbox-abu.png')}/>
+  <Text style={styles.textnav}>inbox</Text> 
+</TouchableOpacity>
 
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Inbox')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/inbox.png')}/>
-      <Text style={styles.textnav}>inbox</Text>
-    </TouchableOpacity>
+<TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
+  <Image style={{width: 22, height: 32}} source = {require('../menu/button-profile.png')}/>
+  <Text style={styles.textnav}>account</Text> 
+</TouchableOpacity>
+</View>
 
-    <TouchableOpacity style={styles.Containernav}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/account-active.png')}/>
-      <Text style={styles.textnav}>account</Text>
-    </TouchableOpacity>
-        </View>
-        </View>
-     
+      </View>
     )
   }
 }
@@ -142,9 +153,84 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-
+  searchbar:{
+    borderWidth: 1,
+    borderColor: '#E8E8E8',
+    borderRadius: 25,
+    height: 40,
+    fontSize: 13,
+    paddingLeft: 45,
+    paddingRight: 20,
+    backgroundColor: 'white',
+    alignItems: 'center'
+  },
+  logoStyle:{
+    position: 'absolute',
+    top: 6,
+    left: 12
+  },
+  name:{
+    color: 'black',
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginTop: 20 
+  },
+  Namebox:{
+    color: 'white',
+    fontSize: 15,
+    fontWeight: 'bold',
+    alignItems: 'center',
+    marginHorizontal: 11
+  },
+  Containerbox:{
+    marginHorizontal: 12,
+    marginTop: 8
+  },
+  boxprogress:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#084ba8',
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
+    padding: 13, borderRadius: 5,
+    marginTop: 20
+  },
+  boxperkembangan:{
+    paddingTop: 5,
+    paddingBottom: 10,
+    backgroundColor: 'white',
+    borderBottomLeftRadius: 4,
+    borderBottomRightRadius: 4,
+    paddingLeft: 3
+  },
+  namatask:{
+    paddingLeft: 5,
+    marginTop: 5
+  },
+  containerfitur:{
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginHorizontal: 16,
+    marginTop: 15
+  },
+  containersub:{
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    width: '100%',
+    marginBottom: 18,
+    marginTop: 20
+  },
+  fiturbox:{
+    width: 75,
+    height: 75,
+    borderWidth: 1,
+    borderColor: '#E6E6E6',
+    backgroundColor: 'white',
+    borderRadius: 18,
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
 });
-
 
 
 	

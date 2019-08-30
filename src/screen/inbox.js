@@ -37,28 +37,23 @@ export default class Profile extends Component{
         
          {/* Navigation bar*/}
 
-        <View style={{height: 56,  flexDirection: 'row'}}>
+         <View style={{height: 59,  flexDirection: 'row'}}>
 
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/home.png')}/>
-      <Text style={styles.textnav}>Home</Text>
-    </TouchableOpacity>
+<TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
+  <Image style={{width: 22, height: 22}} source = {require('../menu/home-abu.png')}/>
+  <Text style={styles.textnav}>Home</Text>
+</TouchableOpacity>          
 
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('News')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/help.png')}/>
-      <Text style={styles.textnav}>help</Text>
-    </TouchableOpacity>
+<TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Inbox')}>
+  <Image style={{width: 22, height: 22}} source = {require('../menu/button-inbox.png')}/>
+  <Text style={styles.textnav}>inbox</Text> 
+</TouchableOpacity>
 
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Inbox')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/inbox-active.png')}/>
-      <Text style={styles.textnav}>inbox</Text>
-    </TouchableOpacity>
-
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/account.png')}/>
-      <Text style={styles.textnav}>account</Text>
-    </TouchableOpacity>
-        </View>
+<TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
+  <Image style={{width: 22, height: 22}} source = {require('../menu/profile-abu.png')}/>
+  <Text style={styles.textnav}>account</Text> 
+</TouchableOpacity>
+</View>
         </View>
      
     )

@@ -22,6 +22,7 @@ import {
 } from 'react-native';
 
 import * as Progress from 'react-native-progress';
+import { Fonts } from './tabscreen/fonts';
 
 export default class Home extends Component{
   static navigationOptions = {
@@ -31,147 +32,122 @@ export default class Home extends Component{
     return(
       <View style={{flex: 1}}>
         {/*Searchbar*/}
-        <ScrollView style={{flex: 1, backgroundColor: '#78cbff'}}>
-          <View style={{marginHorizontal: 17, marginTop: 10}}>
-            <View style={{position: 'relative'}}>
-              <TextInput placeholder="What do you want?" style={styles.searchbar}/>
-              <Image source={require('../icon/search.png')} style={styles.logoStyle}/>
-            </View>
-            <View></View>
-          </View>
+        <ScrollView style={{flex: 1, backgroundColor: '#FAFAFA'}}>
         
-        {/*blokprofile*/} 
-        <View style={styles.Containerbox}>
-          
-          <View style={styles.boxprogress}>
-            <Text style={styles.Namebox}>Progress</Text>
-            <Text style={styles.Namebox}>{time}</Text>
-          </View>
-          <ScrollView style={styles.boxperkembangan}>
+        <ScrollView style={{height: 200, width: '100%', backgroundColor: '#48D1CC'}}>
+          <Image style={{height: 100, width:200, marginLeft: 20}} source = {require('../icon/png/logo.png')}/>
+          <Text style={{marginLeft: 20, fontSize: 20, marginTop: 5, color: 'whitesmoke', fontWeight: Fonts.Satisfy, fontFamily: 'Satisfy-Regular'}}>Hai Dewi</Text>
+          <Text style={{marginLeft: 20, fontSize: 20, marginTop: 5, color: 'whitesmoke'}}>{time}</Text>
+        </ScrollView>
 
-          <View style={{flexDirection: 'row', marginHorizontal: 20, justifyContent: 'space-between',paddingRight: 5, paddingTop: 10}}>
-            <Text style={{alignItems: 'center', justifyContent: 'center'}}>Task</Text>
-            <Text style={{alignItems: 'center', justifyContent: 'center'}}>Waiting</Text>
-            <Text style={{alignItems: 'center', justifyContent: 'center'}}>Done</Text>
-          </View>
-          <View style={{flexDirection: 'row', marginHorizontal: 20, justifyContent: 'space-between',paddingTop: 5, paddingBottom: 20}}>
-            <View style={{height: 50, width: 50, backgroundColor: '#73ecef', alignItems: 'center', justifyContent: 'center', borderRadius: 5}}>
-              <Text>50</Text>  
-            </View>  
 
-            <View style={{height: 50, width: 50, backgroundColor: '#73ecef', alignItems: 'center', justifyContent: 'center', borderRadius: 5}}>
-              <Text>50</Text>  
-            </View>      
 
-            <View style={{height: 50, width: 50, backgroundColor: '#73ecef', alignItems: 'center', justifyContent: 'center', borderRadius: 5}}>
-              <Text>50</Text>  
-            </View>  
-    
-          </View>
-          </ScrollView>
-           
-        </View>
 
-        {/* Fitur */}
+        {/* Pengajuan */}
 
         <View style={{paddingLeft: 20, marginTop: 20}}>
-          <Text style={{fontSize: 16, fontWeight: 'bold'}}>Fitur Solusi</Text>
+          <Text style={{fontSize: 16, fontWeight: 'bold'}}>Saya Ingin Mengajukan....</Text>
         </View>
         
         <View style={styles.containerfitur}>
 
           <View style={styles.containersub}>
-            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('Task')} >
-              <Image style={{width: 26, height: 26}} source = {require('../icon/task.png')}/>
-              <Text style={styles.textnav}>Task</Text>
-            </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('Cuti')} >
-              <Image style={{width: 26, height: 26}} source = {require('../icon/png/001-calendar.png')}/>
+              <Image style={{width: 25, height: 25}} source = {require('../menu/cuti-kalender.png')}/>
               <Text style={styles.textnav}>Cuti</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('')} >
+              <Image style={{width: 40, height: 30}} source = {require('../menu/presensi-jam.png')}/>
+              <Text style={styles.textnav}>presensi</Text>
+            </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('../icon/png/004-music.png')}/>
-              <Text style={styles.textnav}>music</Text>
+              <Image style={{width: 25, height: 25}} source = {require('../menu/resign.png')}/>
+              <Text style={styles.textnav}>resign</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.fiturbox}>
+              <Image style={{width: 25, height: 25}} source = {require('../menu/peminjaman-kardus.png')}/>
+              <Text style={styles.textnav}>peminjaman</Text>
+            </TouchableOpacity>
+          </View>
+
+
+        </View>
+
+
+        {/* Lainnya */}
+
+        <View style={{paddingLeft: 20, marginTop: 20}}>
+          <Text style={{fontSize: 16, fontWeight: 'bold'}}>Data Diri....</Text>
+        </View>
+        
+        <View style={styles.containerfitur}>
+
+          <View style={styles.containersub}>
+          <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('Task')} >
+              <Image style={{width: 25, height: 25}} source = {require('../menu/task-centang.png')}/>
+              <Text style={styles.textnav}>Task</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('Gaji')} >
+              <Image style={{width: 26, height: 26}} source = {require('../menu/gaji-dompet.png')}/>
+              <Text style={styles.textnav}>Slip gaji</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.fiturbox}>
+              <Image style={{width: 26, height: 26}} source = {require('../menu/cuti-mikroskop.png')}/>
+              <Text style={styles.textnav}>Data presensi</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.fiturbox}>
+              <Image style={{width: 26, height: 26}} source = {require('../menu/presensi-grafik.png')}/>
+              <Text style={styles.textnav}>Data Cuti</Text>
             </TouchableOpacity>
           </View>
 
           <View style={styles.containersub}>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('../icon/png/003-radio.png')}/>
-              <Text style={styles.textnav}>Radio</Text>
+              <Image style={{width: 40, height: 26}} source = {require('../menu/tim-saya.png')}/>
+              <Text style={styles.textnav}>Tim Saya</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('../icon/png/002-inventory.png')}/>
-              <Text style={styles.textnav}>Iventaris</Text>
+              <Image style={{width: 26, height: 30}} source = {require('../menu/persetujuan.png')}/>
+              <Text style={styles.textnav}>Persetujuan</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('News')}>
+              <Image style={{width: 26, height: 26}} source = {require('../menu/news-koran.png')}/>
+              <Text style={styles.textnav}>Berita</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 26}} source = {require('../icon/home-active.png')}/>
-              <Text style={styles.textnav}>Home</Text>
+              <Image style={{width: 40, height: 26}} source = {require('../menu/lainnya-3bunder.png')}/>
+              <Text style={styles.textnav}>Lainnya</Text>
             </TouchableOpacity>
           </View>
 
-        </View>
+          
 
-        {/* Solusi Information */}
-        <View style={{paddingLeft: 20, marginTop: 10}}>
-          <Text style={{fontSize: 16, fontWeight: 'bold'}}>Solusi Informasi</Text>
         </View>
-
-        <TouchableOpacity style={{flexDirection: 'row', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, backgroundColor: 'white', marginHorizontal: 16, marginTop: 5 }}>
-          <Image style={{ height: 70, width: 70, borderRadius: 6}} source= {require('../icon/welcome.png')}/>
-        <View style={{flexDirection: 'column', marginHorizontal: 16, flex: 1}}>
-          <Text style={{paddingLeft: 5, fontSize: 15, fontWeight: 'bold' }}>Perayaan Untuk Karyawan Baru</Text>
-          <Text style={{paddingLeft: 5, marginTop: 10, color: 'grey' }}>Perayaan Untuk Karyawan Baru dari Smk negeri 2 depok sleman</Text>
-        </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={{flexDirection: 'row', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, backgroundColor: 'white', marginHorizontal: 16, marginTop: 5 }}>
-          <Image style={{ height: 70, width: 70, borderRadius: 6}} source= {require('../icon/welcome.png')}/>
-        <View style={{flexDirection: 'column', marginHorizontal: 16, flex: 1}}>
-          <Text style={{paddingLeft: 5, fontSize: 15, fontWeight: 'bold' }}>Perayaan Untuk Karyawan Baru</Text>
-          <Text style={{paddingLeft: 5, marginTop: 10, color: 'grey' }}>Perayaan Untuk Karyawan Baru dari Smk negeri 2 depok sleman</Text>
-        </View>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={{flexDirection: 'row', paddingLeft: 10, paddingTop: 10, paddingBottom: 10, backgroundColor: 'white', marginHorizontal: 16, marginTop: 5 }}>
-          <Image style={{ height: 70, width: 70, borderRadius: 6}} source= {require('../icon/welcome.png')}/>
-        <View style={{flexDirection: 'column', marginHorizontal: 16, flex: 1}}>
-          <Text style={{paddingLeft: 5, fontSize: 15, fontWeight: 'bold' }}>Perayaan Untuk Karyawan Baru</Text>
-          <Text style={{paddingLeft: 5, marginTop: 10, color: 'grey' }}>Perayaan Untuk Karyawan Baru dari Smk negeri 2 depok sleman</Text>
-        </View>
-        </TouchableOpacity>       
+    
 
 
         </ScrollView>
 
          {/* Navigation bar*/}
-      
-         <View style={{height: 56,  flexDirection: 'row'}}>
 
-    <TouchableOpacity style={styles.Containernav}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/home-active.png')}/>
-      <Text style={styles.textnav}>Home</Text>
-    </TouchableOpacity>          
-  
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('News')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/help.png')}/>
-      <Text style={styles.textnav}>help</Text> 
-    </TouchableOpacity>
-  
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Inbox')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/inbox.png')}/>
-      <Text style={styles.textnav}>inbox</Text> 
-    </TouchableOpacity>
+         <View style={{height: 59,  flexDirection: 'row'}}>
 
-    <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
-      <Image style={{width: 26, height: 26}} source = {require('../icon/account.png')}/>
-      <Text style={styles.textnav}>account</Text> 
-    </TouchableOpacity>
-  </View>
-      
-      
-      
-      
+<TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
+  <Image style={{width: 22, height: 22}} source = {require('../menu/button-home.png')}/>
+  <Text style={styles.textnav}>Home</Text>
+</TouchableOpacity>          
+
+<TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Inbox')}>
+  <Image style={{width: 22, height: 22}} source = {require('../menu/inbox-abu.png')}/>
+  <Text style={styles.textnav}>inbox</Text> 
+</TouchableOpacity>
+
+<TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
+  <Image style={{width: 22, height: 32}} source = {require('../menu/profile-abu.png')}/>
+  <Text style={styles.textnav}>account</Text> 
+</TouchableOpacity>
+</View>
+
       </View>
     )
   }
@@ -248,20 +224,21 @@ const styles = StyleSheet.create({
   containerfitur:{
     flexDirection: 'row',
     flexWrap: 'wrap',
-    marginHorizontal: 30,
+    marginHorizontal: 16,
     marginTop: 15
   },
   containersub:{
     justifyContent: 'space-between',
     flexDirection: 'row',
     width: '100%',
-    marginBottom: 18
+    marginBottom: 18,
+    marginTop: 20
   },
   fiturbox:{
-    width: 58,
-    height: 58,
+    width: 75,
+    height: 75,
     borderWidth: 1,
-    borderColor: '#EFEFEF',
+    borderColor: '#E6E6E6',
     backgroundColor: 'white',
     borderRadius: 18,
     alignItems: 'center',
