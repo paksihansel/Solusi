@@ -60,11 +60,11 @@ export default class Home extends Component{
               <Image style={{width: 40, height: 30}} source = {require('../menu/presensi-jam.png')}/>
               <Text style={styles.textnav}>presensi</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.fiturbox}>
+            <TouchableOpacity style={styles.fiturbox} >
               <Image style={{width: 25, height: 25}} source = {require('../menu/resign.png')}/>
               <Text style={styles.textnav}>resign</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.fiturbox}>
+            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('Peminjaman')}>
               <Image style={{width: 25, height: 25}} source = {require('../menu/peminjaman-kardus.png')}/>
               <Text style={styles.textnav}>peminjaman</Text>
             </TouchableOpacity>

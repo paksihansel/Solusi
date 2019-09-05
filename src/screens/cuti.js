@@ -18,11 +18,12 @@ import {
   StatusBar,
   Image,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  KeyboardAvoidingView
 } from 'react-native';
 
 import DatePicker from 'react-native-datepicker';
-
+import { Dropdown } from 'react-native-material-dropdown';
 
 export default class Cuti extends Component{
   static navigationOptions = {
@@ -35,6 +36,17 @@ export default class Cuti extends Component{
 
 
   render(){
+    var data = [{
+      value: 'rafli',
+    }, {
+      value: 'Salma',
+    }, {
+      value: 'Tutur',
+    }, {
+      value: 'Baid',
+    }, {
+      value: 'Ilham',
+    }];
     return(
       <View style={{flex: 1}}>
         <ScrollView style={{flex: 1, backgroundColor: '#FAFAFA', flexDirection: 'column'}}>
@@ -125,14 +137,15 @@ export default class Cuti extends Component{
         </View>
         <View style={{marginTop: 15, marginHorizontal: 16, flexDirection: 'column'}}>
             <Text style={{fontSize: 18, fontWeight: 'bold'}}>Handover Document</Text>
-            <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 10}}>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 10, alignItems: 'center'}}>
             <Text style={{fontSize: 15}}>Nama</Text>
-            <View style={{flexDirection: 'column', justifyContent: 'space-between', marginTop: 2}}>
-                  <TextInput
-                    style={{height: 40, width: 150, borderColor: 'gray', borderWidth: 1, paddingRight: 3, marginLeft: 20,  backgroundColor: 'white', borderRadius: 5}}
-                      />
-            </View>
-            </View>
+           <View style={{backgroundColor: 'white', width: 120, right: 30}}>
+            <Dropdown
+            label="Nama"
+        data={data}
+      />
+      </View>
+                  </View>
 
             <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 10}}>
                         <Text style={{fontSize: 15}}>Pekerjaan Diberikan</Text>
@@ -154,6 +167,8 @@ export default class Cuti extends Component{
               <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>Submit</Text>
             </TouchableOpacity>
           </View>
+
+         
 
 
 

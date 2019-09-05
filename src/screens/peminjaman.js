@@ -52,6 +52,12 @@ export default class Gaji extends Component{
         </View>
 
         <View style={{marginTop: 15, paddingLeft: 16, justifyContent: 'space-between', alignItems: 'center', marginHorizontal: 16, flexDirection: 'row'}}>
+          <Text style={{fontSize: 18, alignItems: 'center'}}>Seri Barang</Text>
+          <TextInput style={{backgroundColor: 'white', height: 40, width: 150}}
+          placeholder='ex: Asus A405U'/>
+        </View>
+
+        <View style={{marginTop: 15, paddingLeft: 16, justifyContent: 'space-between', alignItems: 'center', marginHorizontal: 16, flexDirection: 'row'}}>
 
           <Text style={{fontSize: 18, alignItems: 'center'}}>Jumlah Barang</Text>
           <TextInput style={{backgroundColor: 'white', height: 40, width: 50, right: 100}}
@@ -77,14 +83,6 @@ export default class Gaji extends Component{
           <Text style={{fontSize: 18, fontWeight: 'bold', color: 'white'}}>Submit</Text>
           </TouchableOpacity>
           </View>
-      
-
-        
-        
-        
-
-        
-       
 
         </ScrollView>
       </View>

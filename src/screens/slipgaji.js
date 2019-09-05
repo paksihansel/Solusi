@@ -20,7 +20,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-import * as Progress from 'react-native-progress';
+import { Dropdown } from 'react-native-material-dropdown';
 import { Fonts } from "./tabscreen/fonts";
 
 export default class Gaji extends Component{
@@ -28,6 +28,31 @@ export default class Gaji extends Component{
     header: null,
   }
   render(){
+    var data = [{
+      value: 'Januari',
+    }, {
+      value: 'Februari',
+    }, {
+      value: 'Maret',
+    }, {
+      value: 'April',
+    }, {
+      value: 'Mei',
+    }, {
+      value: 'Juni',
+    }, {
+      value: 'Juli',
+    }, {
+      value: 'Agustus',
+    }, {
+      value: 'September',
+    }, {
+      value: 'Oktober',
+    }, {
+      value: 'November',
+    }, {
+      value: 'Desember',
+    }, ];
     return(
       <View style={{flex: 1}}>
         {/*Searchbar*/}
@@ -40,11 +65,14 @@ export default class Gaji extends Component{
         </View>
 
 
-        <View style={{marginTop: 15, paddingLeft: 16, justifyContent: 'space-between', marginHorizontal: 16, flexDirection: 'row', alignItems: 'stretch'}}>
+        <View style={{marginTop: 15, paddingLeft: 16, justifyContent: 'space-between',alignItems:'center', marginHorizontal: 16, flexDirection: 'row', }}>
           <Text style={{fontSize: 18}}>Pilih Periode</Text>
-          <View style={{backgroundColor: 'white', height: 30, width: 150, justifyContent: 'center', alignItems: 'center'}}>
-              <Text style={{color: 'grey', }}>Pilih Bulan</Text>
-          </View>
+          <View style={{backgroundColor: 'white', width: 170, paddingLeft: 10, borderRadius: 10}}>
+            <Dropdown
+            label="gaji 1 tahun"
+        data={data}
+      />
+      </View>
         </View>
 
         <View style={{backgroundColor: 'white', marginTop: 20, height: 100, width: 360, marginHorizontal: 16}}>

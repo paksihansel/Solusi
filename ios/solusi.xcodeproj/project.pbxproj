@@ -37,6 +37,7 @@
 		8E41FD53FBE8411A920FE27C /* VarelaRound-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 86FBBA788A504287A0D17393 /* VarelaRound-Regular.ttf */; };
 		BEC2816FDC4E4B26BB2C18D4 /* Satisfy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCCFDF1FEA9A4B4D87A2DC43 /* Satisfy-Regular.ttf */; };
 		AF5D4C55ABA444B4958736CC /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84849871C66D4DCAA807DE5A /* Fontisto.ttf */; };
+		740D5442781947F2896B9DC1 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A56B1118783943D38524627F /* Fontisto.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		86FBBA788A504287A0D17393 /* VarelaRound-Regular.ttf */ = {isa = PBXFileReference; name = "VarelaRound-Regular.ttf"; path = "../assets/fonts/VarelaRound-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		DCCFDF1FEA9A4B4D87A2DC43 /* Satisfy-Regular.ttf */ = {isa = PBXFileReference; name = "Satisfy-Regular.ttf"; path = "../assets/fonts/Satisfy-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		84849871C66D4DCAA807DE5A /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A56B1118783943D38524627F /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/native-base/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				86FBBA788A504287A0D17393 /* VarelaRound-Regular.ttf */,
 				DCCFDF1FEA9A4B4D87A2DC43 /* Satisfy-Regular.ttf */,
 				84849871C66D4DCAA807DE5A /* Fontisto.ttf */,
+				A56B1118783943D38524627F /* Fontisto.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				8E41FD53FBE8411A920FE27C /* VarelaRound-Regular.ttf in Resources */,
 				BEC2816FDC4E4B26BB2C18D4 /* Satisfy-Regular.ttf in Resources */,
 				AF5D4C55ABA444B4958736CC /* Fontisto.ttf in Resources */,
+				740D5442781947F2896B9DC1 /* Fontisto.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
