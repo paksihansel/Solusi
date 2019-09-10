@@ -31,7 +31,7 @@ export default class Profile extends Component{
       <View style={{flex: 1}}>
        <View style={{flex: 1, backgroundColor: '#78cbff'}}>
 
-        <Image style={{width: '100%', height: '100%'}} source= {require('../icon/png/under.jpg')}/>
+        <Image style={{width: '100%', height: '100%'}} source= {require('../icon/Dewi.jpg')}/>
        </View>
 
         

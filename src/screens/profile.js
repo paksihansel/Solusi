@@ -19,7 +19,7 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
-  alertMessage
+  alertMessage,
 } from 'react-native';
 
 import { NavigationActions } from 'react-navigation';
@@ -56,8 +56,7 @@ export default class Profile extends Component{
           <Text style={{fontSize: 20, fontWeight: 'bold', fontFamily: 'VarelaRound-Regular'}}>Detail Profile</Text>
         </View>
         <TouchableOpacity style={{marginLeft: 10, marginTop: 15}} 
-          onPress={() =>this.props.navigation.navigate('ProfileUser')}
-          >
+          onPress={() =>this.props.navigation.navigate('ProfileUser')} >
           <Text style={{fontSize: 18, fontFamily: Fonts.Varella}}>Profile User</Text>
           <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
         </TouchableOpacity>
@@ -75,15 +74,18 @@ export default class Profile extends Component{
         <View style={{marginLeft: 10}}>
           <Text style={{fontSize: 20, fontWeight: 'bold'}}>Lainnya</Text>
         </View>
-        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}>
+        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}
+         onPress={() =>this.props.navigation.navigate('VisiMisi')}>
           <Text style={{fontSize: 18}}>Visi dan Misi</Text>
           <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
         </TouchableOpacity>
-        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}>
+        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}
+          onPress={() =>this.props.navigation.navigate('About')}>
           <Text style={{fontSize: 18}}>About</Text>
           <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
         </TouchableOpacity>
-        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}>
+        <TouchableOpacity style={{marginLeft: 10, marginTop: 15}}
+         onPress={() =>this.props.navigation.navigate('Setting')}>
           <Text style={{fontSize: 18}}>Setting</Text>
           <View style={{borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
         </TouchableOpacity>

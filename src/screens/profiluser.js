@@ -25,14 +25,28 @@ import {
 import { NavigationActions } from 'react-navigation';
 import { Fonts } from './tabscreen/fonts';
 
-
+import axios from 'axios';
 export default class ProfileUser extends Component{
 
   static navigationOptions = {
     header: null,
   }
+  state = {
+    user: []
+  }
+
+  componentDidMount() {
+    axios.get(`https://192.168.3.94:3000/api/user/20/profiles`)
+      .then(res => {
+        const persons = res.data;
+        this.setState({ user });
+      })
+  }
+
+
   render(){
-    return(
+        return(
+      
       <View style={{flex: 1}}>
        <ScrollView style={{flex: 1, backgroundColor: '#FAFAFA'}}>
        <View style={{height: 50, backgroundColor: '#48D1CC',justifyContent: 'center'}}>
@@ -40,12 +54,11 @@ export default class ProfileUser extends Component{
               <Text style={{fontSize: 20, color: 'white', fontFamily: Fonts.Varella}}>Profile User</Text>
             </View>
         </View>
-
-
+  
        <View style={{paddingTop:10, paddingBottom:20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column'}}> 
         <View style={{marginBottom: 5, marginLeft: 10, marginTop: 15,marginRight: 20, flexDirection: 'column', justifyContent: 'space-between'}}>
           <Text style={{fontSize: 15}}>Sex</Text>
-          <Text style={{fontSize: 18}}>Female</Text>
+          <Text style={{fontSize: 18}}>Male</Text>
         </View>
         <View style={{marginLeft:10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
         
@@ -69,7 +82,7 @@ export default class ProfileUser extends Component{
 
         <View style={{marginBottom: 5, marginLeft: 10, marginTop: 15,marginRight: 20, flexDirection: 'column', justifyContent: 'space-between'}}>
           <Text style={{fontSize: 15}}>Email</Text>
-          <Text style={{fontSize: 18}}>Dewi.Ambarn@gmail.com</Text>
+          { this.state.user.map(user => <Text>{user.email}</Text>)}
         </View>
         <View style={{marginLeft:10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
 

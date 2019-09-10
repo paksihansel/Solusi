@@ -32,16 +32,16 @@ export default class Home extends Component{
     return(
       <View style={{flex: 1}}>
         {/*Searchbar*/}
-        <ScrollView style={{flex: 1, backgroundColor: '#FAFAFA'}}>
+  
         
-        <ScrollView style={{height: 200, width: '100%', backgroundColor: '#48D1CC'}}>
-          <Image style={{height: 100, width:200, marginLeft: 20}} source = {require('../icon/png/logo.png')}/>
+        <View style={{height: 220, width: '100%', backgroundColor: '#48D1CC'}}>
+          <Image style={{height: 100, width:200, marginLeft: 20}} source = {require('../icon/logo.png')}/>
           <Text style={{marginLeft: 20, fontSize: 20, marginTop: 5, color: 'whitesmoke', fontWeight: Fonts.Satisfy, fontFamily: 'Satisfy-Regular'}}>Hai Dewi</Text>
           <Text style={{marginLeft: 20, fontSize: 20, marginTop: 5, color: 'whitesmoke'}}>{time}</Text>
-        </ScrollView>
+        </View>
 
 
-
+        <ScrollView style={{flex: 1, backgroundColor: '#FAFAFA'}}>
 
         {/* Pengajuan */}
 
@@ -55,10 +55,6 @@ export default class Home extends Component{
             <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('Cuti')} >
               <Image style={{width: 25, height: 25}} source = {require('../menu/cuti-kalender.png')}/>
               <Text style={styles.textnav}>Cuti</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('')} >
-              <Image style={{width: 40, height: 30}} source = {require('../menu/presensi-jam.png')}/>
-              <Text style={styles.textnav}>presensi</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox} >
               <Image style={{width: 25, height: 25}} source = {require('../menu/resign.png')}/>
@@ -87,10 +83,6 @@ export default class Home extends Component{
               <Image style={{width: 25, height: 25}} source = {require('../menu/task-centang.png')}/>
               <Text style={styles.textnav}>Task</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('Gaji')} >
-              <Image style={{width: 26, height: 26}} source = {require('../menu/gaji-dompet.png')}/>
-              <Text style={styles.textnav}>Slip gaji</Text>
-            </TouchableOpacity>
             <TouchableOpacity style={styles.fiturbox}>
               <Image style={{width: 26, height: 26}} source = {require('../menu/cuti-mikroskop.png')}/>
               <Text style={styles.textnav}>Data presensi</Text>
@@ -102,21 +94,13 @@ export default class Home extends Component{
           </View>
 
           <View style={styles.containersub}>
-            <TouchableOpacity style={styles.fiturbox}>
+            <TouchableOpacity style={styles.fiturbox}onPress={() =>this.props.navigation.navigate('TimSaya')}>
               <Image style={{width: 40, height: 26}} source = {require('../menu/tim-saya.png')}/>
               <Text style={styles.textnav}>Tim Saya</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 26, height: 30}} source = {require('../menu/persetujuan.png')}/>
-              <Text style={styles.textnav}>Persetujuan</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.fiturbox} onPress={() =>this.props.navigation.navigate('News')}>
+            <TouchableOpacity style={{width: 85, height: 85, borderWidth: 1,right: 135, borderColor: '#E6E6E6', backgroundColor: 'white', borderRadius: 18, alignItems: 'center', justifyContent: 'center'}} onPress={() =>this.props.navigation.navigate('News')}>
               <Image style={{width: 26, height: 26}} source = {require('../menu/news-koran.png')}/>
               <Text style={styles.textnav}>Berita</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.fiturbox}>
-              <Image style={{width: 40, height: 26}} source = {require('../menu/lainnya-3bunder.png')}/>
-              <Text style={styles.textnav}>Lainnya</Text>
             </TouchableOpacity>
           </View>
 
@@ -235,8 +219,8 @@ const styles = StyleSheet.create({
     marginTop: 20
   },
   fiturbox:{
-    width: 75,
-    height: 75,
+    width: 85,
+    height: 85,
     borderWidth: 1,
     borderColor: '#E6E6E6',
     backgroundColor: 'white',

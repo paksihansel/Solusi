@@ -2,7 +2,8 @@
     "telemetry.machineId": "f8ba1df920164d31ac3fa07248f3b0053ce56148aef23ec9197c199ccb386074",
     "openedPathsList": {
         "workspaces3": [
-            "file:///home/paksi/project/Solusi"
+            "file:///home/paksi/project/Solusi",
+            "file:///home/paksi/Downloads/icon-tim-saya"
         ],
         "files2": []
     },
@@ -56,6 +57,17 @@
                                     },
                                     "enabled": true,
                                     "label": "~/project/Solusi"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/paksi/Downloads/icon-tim-saya",
+                                        "path": "/home/paksi/Downloads/icon-tim-saya",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Downloads/icon-tim-saya"
                                 },
                                 {
                                     "id": "vscode.menubar.separator"
@@ -358,8 +370,7 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar",
-                                    "checked": true
+                                    "label": "Show &&Side Bar"
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -1385,17 +1396,17 @@
     },
     "theme": "vs-dark",
     "themeBackground": "#1e1e1e",
-    "pickerWorkingDir": "/home/paksi/project",
+    "pickerWorkingDir": "/home/paksi/Downloads",
     "windowsState": {
         "lastActiveWindow": {
             "folder": "file:///home/paksi/project/Solusi",
             "backupPath": "/home/paksi/project/Solusi/~/.vscode-root/Backups/49d3077298d06f6407dd496fad811e69",
             "uiState": {
-                "mode": 0,
-                "x": 171,
+                "mode": 1,
+                "x": 0,
                 "y": 57,
                 "width": 1024,
-                "height": 711
+                "height": 707
             }
         },
         "openedWindows": []

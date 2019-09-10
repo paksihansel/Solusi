@@ -41,7 +41,7 @@ export default class Task extends Component{
 
 
         <Image  style={{width:200, height: 100, marginHorizontal: 90}}
-          			source={require('../icon/png/logo.png')}/>
+          			source={require('../icon/logo.png')}/>
 
         <View style={{marginTop: 15, paddingLeft: 16}}>
           <Text style={{fontSize: 18, fontWeight: 'bold'}}>My Project</Text>

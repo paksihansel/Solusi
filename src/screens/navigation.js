@@ -14,6 +14,18 @@ import Cuti from './cuti';
 import ProfileUser from './profiluser';
 import Gaji from './slipgaji';
 import Peminjaman from './peminjaman';
+import TimSaya from './timsaya';
+import InfoAkun from './InfoAkun';
+import Setting from './setting';
+import VisiMisi from './visimisi';
+import About from './about';
+import Rpassword from './r_password';
+
+
+
+
+
+
 
 
 
@@ -50,6 +62,24 @@ const RootStack = createStackNavigator(
     },
     Peminjaman: {
       screen: Peminjaman,
+    },
+    TimSaya: {
+      screen: TimSaya,
+    },
+    InfoAkun: {
+      screen: InfoAkun,
+    },
+    Setting: {
+      screen: Setting,
+    },
+    VisiMisi: {
+      screen: VisiMisi,
+    },
+    About: {
+      screen: About,
+    },
+    Rpassword: {
+      screen: Rpassword,
     }
   },
   
