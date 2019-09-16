@@ -19,7 +19,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView
+  KeyboardAvoidingView,
 } from 'react-native';
 
 import DatePicker from 'react-native-datepicker';
@@ -31,7 +31,11 @@ export default class Cuti extends Component{
   }
   constructor(props){
     super(props)
-    this.state = {date:""}
+    this.state = 
+    {
+      dateawal:"",
+      dateakhir:""
+  }
   }
 
 
@@ -60,7 +64,7 @@ export default class Cuti extends Component{
 						<View style={{flexDirection: 'column'}}>
           <DatePicker
                   style={{width: 200}}
-                  date={this.state.date}
+                  date={this.state.dateawal}
                   mode="date"
                   placeholder="start date"
                   placeholderTextColor="black"
@@ -77,12 +81,12 @@ export default class Cuti extends Component{
 
                     }
                   }}
-                  onDateChange={(date) => {this.setState({date: date})}}
+                  onDateChange={(dateawal) => {this.setState({dateawal: dateawal})}}
                 />
 
          <DatePicker
                   style={{width: 200, marginTop: 10}}
-                  date={this.state.date}
+                  date={this.state.dateakhir}
                   mode="date"
                   placeholder="end date"
                   format="YYYY-MM-DD"
@@ -96,7 +100,7 @@ export default class Cuti extends Component{
                       backgroundColor: 'white'
                     }
                   }}
-                  onDateChange={(date) => {this.setState({date: date})}}
+                  onDateChange={(dateakhir) => {this.setState({dateakhir: dateakhir})}}
                 />
                 </View>
                 </View>

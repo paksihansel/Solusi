@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 let time = new Date().toLocaleString();
+import API from '../service/api';
 import {
   SafeAreaView,
   StyleSheet,
@@ -26,25 +27,30 @@ import { NavigationActions } from 'react-navigation';
 import { Fonts } from './tabscreen/fonts';
 
 import axios from 'axios';
+import { thisExpression } from '@babel/types';
+
+const API_URL = 'https://599ae110.ngrok.io';
+
 export default class ProfileUser extends Component{
 
   static navigationOptions = {
     header: null,
   }
   state = {
-    user: []
+    users: []
   }
-
   componentDidMount() {
-    axios.get(`https://192.168.3.94:3000/api/user/20/profiles`)
-      .then(res => {
-        const persons = res.data;
-        this.setState({ user });
-      })
+    const url = `${API_URL}/api/user/12/profiles`;
+    axios.get(url).then(response => response.data)
+    .then((data) => {
+      this.setState({ users: data })
+      console.log(this.state.users)
+     })
   }
 
 
   render(){
+    
         return(
       
       <View style={{flex: 1}}>
@@ -54,6 +60,7 @@ export default class ProfileUser extends Component{
               <Text style={{fontSize: 20, color: 'white', fontFamily: Fonts.Varella}}>Profile User</Text>
             </View>
         </View>
+
   
        <View style={{paddingTop:10, paddingBottom:20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column'}}> 
         <View style={{marginBottom: 5, marginLeft: 10, marginTop: 15,marginRight: 20, flexDirection: 'column', justifyContent: 'space-between'}}>
@@ -82,7 +89,7 @@ export default class ProfileUser extends Component{
 
         <View style={{marginBottom: 5, marginLeft: 10, marginTop: 15,marginRight: 20, flexDirection: 'column', justifyContent: 'space-between'}}>
           <Text style={{fontSize: 15}}>Email</Text>
-          { this.state.user.map(user => <Text>{user.email}</Text>)}
+          { this.state.data.map(data => <Text>{data.email}</Text>)}
         </View>
         <View style={{marginLeft:10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
 

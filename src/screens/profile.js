@@ -24,6 +24,8 @@ import {
 
 import { NavigationActions } from 'react-navigation';
 import { Fonts } from './tabscreen/fonts';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 
 export default class Profile extends Component{
@@ -34,7 +36,7 @@ export default class Profile extends Component{
 
 
   onButtonPress = () => {
-    this.props.navigation.navigate('Home')
+    this.props.navigation.navigate('Login')
  }
 
   render(){
@@ -118,7 +120,7 @@ export default class Profile extends Component{
         
          {/* Navigation bar*/}
 
-         <View style={{height: 59,  flexDirection: 'row'}}>
+         <View style={{height: 50,  flexDirection: 'row'}}>
 
 <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
   <Image style={{width: 22, height: 22}} source = {require('../menu/home-abu.png')}/>
@@ -131,7 +133,7 @@ export default class Profile extends Component{
 </TouchableOpacity>
 
 <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
-  <Image style={{width: 22, height: 32}} source = {require('../menu/button-profile.png')}/>
+<Icon name="user-circle" size={25} color="#48D1CC" />
   <Text style={styles.textnav}>account</Text> 
 </TouchableOpacity>
 </View>
@@ -141,96 +143,16 @@ export default class Profile extends Component{
   }
 }
 const styles = StyleSheet.create({
-  textnav: {
-    fontSize: 10,
-    color: '#545454',
-    marginTop: 4
-  },
-  ImageStyle:{
-    width: 26,
-    height: 26
-  },
+  
   Containernav:{
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
   },
-  searchbar:{
-    borderWidth: 1,
-    borderColor: '#E8E8E8',
-    borderRadius: 25,
-    height: 40,
-    fontSize: 13,
-    paddingLeft: 45,
-    paddingRight: 20,
-    backgroundColor: 'white',
-    alignItems: 'center'
-  },
-  logoStyle:{
-    position: 'absolute',
-    top: 6,
-    left: 12
-  },
-  name:{
-    color: 'black',
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 20 
-  },
-  Namebox:{
-    color: 'white',
-    fontSize: 15,
-    fontWeight: 'bold',
-    alignItems: 'center',
-    marginHorizontal: 11
-  },
-  Containerbox:{
-    marginHorizontal: 12,
-    marginTop: 8
-  },
-  boxprogress:{
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    backgroundColor: '#084ba8',
-    borderTopLeftRadius: 4,
-    borderTopRightRadius: 4,
-    padding: 13, borderRadius: 5,
-    marginTop: 20
-  },
-  boxperkembangan:{
-    paddingTop: 5,
-    paddingBottom: 10,
-    backgroundColor: 'white',
-    borderBottomLeftRadius: 4,
-    borderBottomRightRadius: 4,
-    paddingLeft: 3
-  },
-  namatask:{
-    paddingLeft: 5,
-    marginTop: 5
-  },
-  containerfitur:{
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    marginHorizontal: 16,
-    marginTop: 15
-  },
-  containersub:{
-    justifyContent: 'space-between',
-    flexDirection: 'row',
-    width: '100%',
-    marginBottom: 18,
-    marginTop: 20
-  },
-  fiturbox:{
-    width: 75,
-    height: 75,
-    borderWidth: 1,
-    borderColor: '#E6E6E6',
-    backgroundColor: 'white',
-    borderRadius: 18,
-    alignItems: 'center',
-    justifyContent: 'center'
+  textnav: {
+    fontSize: 10,
+    color: '#545454',
+    marginTop: 4
   }
 });
 

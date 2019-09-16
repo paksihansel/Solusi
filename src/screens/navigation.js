@@ -3,7 +3,7 @@ import { Image } from 'react-native';
 import { createAppContainer, createStackNavigator, NavigationAction } from 'react-navigation';
 
 
-
+import Login from './login';
 import Home from './Home';
 import News from './news';
 import Profile from './profile';
@@ -33,6 +33,9 @@ import Rpassword from './r_password';
 
 const RootStack = createStackNavigator(
   {
+    Login: {
+      screen: Login,
+    },
     Home: {
       screen: Home,
     },
@@ -84,7 +87,8 @@ const RootStack = createStackNavigator(
   },
   
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Login',
+    headerMode: null  
   }
 );
 

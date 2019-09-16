@@ -9,7 +9,7 @@
 import React, {Component} from 'react';
 let time = new Date().toLocaleString();
 import {
-  SafeAreaView,
+  Modal,
   StyleSheet,
   ScrollView,
   View,
@@ -23,10 +23,20 @@ import {
 
 import * as Progress from 'react-native-progress';
 import { Fonts } from './tabscreen/fonts';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default class Home extends Component{
   static navigationOptions = {
     header: null,
+  }
+
+  state = {
+    modalVisible: false,
+  };
+
+  setModalVisible(visible) {
+    this.setState({modalVisible: visible});
   }
   render(){
     return(
@@ -36,7 +46,7 @@ export default class Home extends Component{
         
         <View style={{height: 220, width: '100%', backgroundColor: '#48D1CC'}}>
           <Image style={{height: 100, width:200, marginLeft: 20}} source = {require('../icon/logo.png')}/>
-          <Text style={{marginLeft: 20, fontSize: 20, marginTop: 5, color: 'whitesmoke', fontWeight: Fonts.Satisfy, fontFamily: 'Satisfy-Regular'}}>Hai Dewi</Text>
+          <Text style={{marginLeft: 20, fontSize: 30, marginTop: 5, color: 'whitesmoke', fontFamily: 'Satisfy-Regular'}}>Hai Dewi</Text>
           <Text style={{marginLeft: 20, fontSize: 20, marginTop: 5, color: 'whitesmoke'}}>{time}</Text>
         </View>
 
@@ -98,10 +108,52 @@ export default class Home extends Component{
               <Image style={{width: 40, height: 26}} source = {require('../menu/tim-saya.png')}/>
               <Text style={styles.textnav}>Tim Saya</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{width: 85, height: 85, borderWidth: 1,right: 135, borderColor: '#E6E6E6', backgroundColor: 'white', borderRadius: 18, alignItems: 'center', justifyContent: 'center'}} onPress={() =>this.props.navigation.navigate('News')}>
+            <TouchableOpacity style={{width: 85, height: 85, borderWidth: 1, borderColor: '#E6E6E6', backgroundColor: 'white', borderRadius: 18, alignItems: 'center', justifyContent: 'center'}} onPress={() =>this.props.navigation.navigate('News')}>
               <Image style={{width: 26, height: 26}} source = {require('../menu/news-koran.png')}/>
               <Text style={styles.textnav}>Berita</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={{width: 85, height: 85, borderWidth: 1, borderColor: '#E6E6E6', backgroundColor: 'white', borderRadius: 18, alignItems: 'center', justifyContent: 'center'}} onPress={() =>this.props.navigation.navigate('News')}
+            onPress={() => { this.setModalVisible(true);
+            }}>
+            <Icon name="ellipsis-h" size={30} color="grey" />
+              <Text style={styles.textnav}>Lainnya</Text>
+            </TouchableOpacity>
+
+            <Modal
+          animationType="slide"
+          transparent={true}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            Alert.alert('Modal has been closed.');
+          }}>
+          <View style={{marginTop: 22, backgroundColor: 'whitesmoke', height: 500, top: 200, borderTopStartRadius: 20, borderTopEndRadius: 20, borderTopColor: 'black'}}>
+            <View style={{flexDirection: 'row', justifyContent: 'space-between', marginHorizontal: 20, marginTop: 10}}>
+              <Text style={{fontSize: 18, fontFamily: 'Satisfy-Regular'}}>Fitur Lainnya....</Text>
+              <TouchableOpacity
+                onPress={() => {
+                  this.setModalVisible(!this.state.modalVisible);
+                }}
+                style={{height: 40, width: 80,backgroundColor: '#48D1CC', justifyContent: 'center', alignItems: 'center', borderRadius: 10}}>
+                <Text>closed</Text>
+                
+              </TouchableOpacity>
+            </View>
+
+            <View style={{marginTop: 50, marginHorizontal: 10}}>
+                <TouchableOpacity style={{width: 85, height: 85, borderWidth: 1, borderColor: '#E6E6E6', backgroundColor: 'white', borderRadius: 18, alignItems: 'center', justifyContent: 'center'}} onPress={() =>this.props.navigation.navigate('News')}>
+            <Icon name="ellipsis-h" size={30} color="grey" />
+              <Text style={{fontWeight: 'bold'}}>Lainnya</Text>
+            </TouchableOpacity>
+            </View>
+          </View>
+        </Modal>
+
+
+
+
+
+
+
           </View>
 
           
@@ -114,7 +166,7 @@ export default class Home extends Component{
 
          {/* Navigation bar*/}
 
-         <View style={{height: 59,  flexDirection: 'row'}}>
+         <View style={{height: 50,  flexDirection: 'row'}}>
 
 <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
   <Image style={{width: 22, height: 22}} source = {require('../menu/button-home.png')}/>
@@ -127,7 +179,7 @@ export default class Home extends Component{
 </TouchableOpacity>
 
 <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
-  <Image style={{width: 22, height: 32}} source = {require('../menu/profile-abu.png')}/>
+<Icon name="user-circle" size={25} color="grey" />
   <Text style={styles.textnav}>account</Text> 
 </TouchableOpacity>
 </View>

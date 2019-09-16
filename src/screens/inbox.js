@@ -21,6 +21,8 @@ import {
 } from 'react-native';
 
 import * as Progress from 'react-native-progress';
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 
 export default class Profile extends Component{
   static navigationOptions = {
@@ -37,7 +39,7 @@ export default class Profile extends Component{
         
          {/* Navigation bar*/}
 
-         <View style={{height: 59,  flexDirection: 'row'}}>
+         <View style={{height: 50,  flexDirection: 'row'}}>
 
 <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Home')}>
   <Image style={{width: 22, height: 22}} source = {require('../menu/home-abu.png')}/>
@@ -50,7 +52,7 @@ export default class Profile extends Component{
 </TouchableOpacity>
 
 <TouchableOpacity style={styles.Containernav} onPress={() =>this.props.navigation.navigate('Profile')}>
-  <Image style={{width: 22, height: 22}} source = {require('../menu/profile-abu.png')}/>
+<Icon name="user-circle" size={25} color="grey" />
   <Text style={styles.textnav}>account</Text> 
 </TouchableOpacity>
 </View>

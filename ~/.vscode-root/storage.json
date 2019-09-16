@@ -2,7 +2,10 @@
     "telemetry.machineId": "f8ba1df920164d31ac3fa07248f3b0053ce56148aef23ec9197c199ccb386074",
     "openedPathsList": {
         "workspaces3": [
+            "file:///home/paksi/Downloads/images",
             "file:///home/paksi/project/Solusi",
+            "file:///home/paksi/project/coba1",
+            "file:///home/paksi/project/react-native-tutorial",
             "file:///home/paksi/Downloads/icon-tim-saya"
         ],
         "files2": []
@@ -57,6 +60,39 @@
                                     },
                                     "enabled": true,
                                     "label": "~/project/Solusi"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/paksi/Downloads/images",
+                                        "path": "/home/paksi/Downloads/images",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/Downloads/images"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/paksi/project/coba1",
+                                        "path": "/home/paksi/project/coba1",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/project/coba1"
+                                },
+                                {
+                                    "id": "openRecentFolder",
+                                    "uri": {
+                                        "$mid": 1,
+                                        "external": "file:///home/paksi/project/react-native-tutorial",
+                                        "path": "/home/paksi/project/react-native-tutorial",
+                                        "scheme": "file"
+                                    },
+                                    "enabled": true,
+                                    "label": "~/project/react-native-tutorial"
                                 },
                                 {
                                     "id": "openRecentFolder",
@@ -1036,8 +1072,8 @@
                 "userSettingsLabel": "ctrl+k f"
             },
             "workbench.action.closeWindow": {
-                "label": "Ctrl+Shift+W",
-                "userSettingsLabel": "ctrl+shift+w"
+                "label": "Ctrl+W",
+                "userSettingsLabel": "ctrl+w"
             },
             "workbench.action.quit": {
                 "label": "Ctrl+Q",
@@ -1399,12 +1435,12 @@
     "pickerWorkingDir": "/home/paksi/Downloads",
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/paksi/project/Solusi",
-            "backupPath": "/home/paksi/project/Solusi/~/.vscode-root/Backups/49d3077298d06f6407dd496fad811e69",
+            "folder": "file:///home/paksi/project/coba1",
+            "backupPath": "/home/paksi/project/Solusi/~/.vscode-root/Backups/37bca281e4de9c9d47b491fe17a1f8ca",
             "uiState": {
-                "mode": 1,
+                "mode": 0,
                 "x": 0,
-                "y": 57,
+                "y": 61,
                 "width": 1024,
                 "height": 707
             }
