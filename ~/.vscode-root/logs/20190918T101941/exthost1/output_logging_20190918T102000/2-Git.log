@@ -1,0 +1,88 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --show-toplevel
+> git rev-parse --git-dir
+> git config --get commit.template
+Open repository: /home/paksi/project/Solusi
+> git status -z -u
+> git show :src/screens/profiluser.js
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git check-ignore -v -z --stdin
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :src/components/Login.js
+> git ls-files --stage -- src/components/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git show :src/service/devicestorage.js
+> git ls-files --stage -- src/service/
+> git check-ignore -v -z --stdin
+> git show :src/components/Login.js
+> git ls-files --stage -- src/components/
+> git show :src/service/devicestorage.js
+> git ls-files --stage -- src/service/
+> git show :src/components/Login.js
+> git ls-files --stage -- src/components/
+> git show :src/service/devicestorage.js
+> git ls-files --stage -- src/service/
+> git show :src/screens/Auth.js
+> git ls-files --stage -- src/screens/
+> git show :src/service/devicestorage.js
+> git ls-files --stage -- src/service/
+> git show :src/screens/Auth.js
+> git ls-files --stage -- src/screens/
+> git show :src/components/Login.js
+> git ls-files --stage -- src/components/
+> git show :src/service/devicestorage.js
+> git ls-files --stage -- src/service/
+> git show :src/screens/Auth.js
+> git ls-files --stage -- src/screens/
+> git show :src/components/Login.js
+> git ls-files --stage -- src/components/
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse master
+> git rev-parse --symbolic-full-name master@{u}
+> git rev-list --left-right master...refs/remotes/origin/master
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git rev-parse --show-toplevel
+fatal: not a git repository (or any of the parent directories): .git
+> git show :src/components/Login.js
+> git ls-files --stage -- src/components/
+> git show :src/screens/Auth.js
+> git ls-files --stage -- src/screens/

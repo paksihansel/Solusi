@@ -31,11 +31,14 @@ export default class Cuti extends Component{
   }
   constructor(props){
     super(props)
-    this.state = 
-    {
-      dateawal:"",
-      dateakhir:""
-  }
+    this.state = {
+      dateawal: '',
+      dateakhir: '',
+      keperluan: '',
+      OnProgress: '',
+      handover:'',
+      
+    };
   }
 
 

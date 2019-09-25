@@ -8,7 +8,6 @@
 
 import React, {Component} from 'react';
 let time = new Date().toLocaleString();
-import API from '../service/api';
 import {
   SafeAreaView,
   StyleSheet,
@@ -28,8 +27,9 @@ import { Fonts } from './tabscreen/fonts';
 
 import axios from 'axios';
 import { thisExpression } from '@babel/types';
+import { Item } from 'native-base';
 
-const API_URL = 'https://599ae110.ngrok.io';
+const API_URL = 'https://19ef5b98.ngrok.io';
 
 export default class ProfileUser extends Component{
 
@@ -37,14 +37,14 @@ export default class ProfileUser extends Component{
     header: null,
   }
   state = {
-    users: []
+    data: []
   }
   componentDidMount() {
-    const url = `${API_URL}/api/user/12/profiles`;
+    const url = `${API_URL}/api/pengguna/12/profil`;
     axios.get(url).then(response => response.data)
     .then((data) => {
-      this.setState({ users: data })
-      console.log(this.state.users)
+      this.setState({ data: data })
+      console.log(this.state.data)
      })
   }
 
@@ -77,7 +77,7 @@ export default class ProfileUser extends Component{
         
         <View style={{marginBottom: 5, marginLeft: 10, marginTop: 15,marginRight: 20, flexDirection: 'column', justifyContent: 'space-between'}}>
           <Text style={{fontSize: 15}}>Blood Type</Text>
-          <Text style={{fontSize: 18}}>A</Text>
+          <Text style={{fontSize: 18}}>{Item.golongan_darah}</Text>
         </View>
         <View style={{marginLeft:10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
 
@@ -89,7 +89,7 @@ export default class ProfileUser extends Component{
 
         <View style={{marginBottom: 5, marginLeft: 10, marginTop: 15,marginRight: 20, flexDirection: 'column', justifyContent: 'space-between'}}>
           <Text style={{fontSize: 15}}>Email</Text>
-          { this.state.data.map(data => <Text>{data.email}</Text>)}
+          <Text>{data.email}</Text>)
         </View>
         <View style={{marginLeft:10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4}}/>
 

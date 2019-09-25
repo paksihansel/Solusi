@@ -3,7 +3,8 @@ import { Image } from 'react-native';
 import { createAppContainer, createStackNavigator, NavigationAction } from 'react-navigation';
 
 
-import Login from './login';
+import Login from './Login';
+
 import Home from './Home';
 import News from './news';
 import Profile from './profile';
@@ -20,14 +21,6 @@ import Setting from './setting';
 import VisiMisi from './visimisi';
 import About from './about';
 import Rpassword from './r_password';
-
-
-
-
-
-
-
-
 
 
 

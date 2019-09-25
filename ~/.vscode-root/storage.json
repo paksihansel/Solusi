@@ -2,8 +2,8 @@
     "telemetry.machineId": "f8ba1df920164d31ac3fa07248f3b0053ce56148aef23ec9197c199ccb386074",
     "openedPathsList": {
         "workspaces3": [
-            "file:///home/paksi/Downloads/images",
             "file:///home/paksi/project/Solusi",
+            "file:///home/paksi/Downloads/images",
             "file:///home/paksi/project/coba1",
             "file:///home/paksi/project/react-native-tutorial",
             "file:///home/paksi/Downloads/icon-tim-saya"
@@ -406,7 +406,8 @@
                                 },
                                 {
                                     "id": "workbench.action.toggleSidebarVisibility",
-                                    "label": "Show &&Side Bar"
+                                    "label": "Show &&Side Bar",
+                                    "checked": true
                                 },
                                 {
                                     "id": "workbench.action.toggleStatusbarVisibility",
@@ -1435,8 +1436,8 @@
     "pickerWorkingDir": "/home/paksi/Downloads",
     "windowsState": {
         "lastActiveWindow": {
-            "folder": "file:///home/paksi/project/coba1",
-            "backupPath": "/home/paksi/project/Solusi/~/.vscode-root/Backups/37bca281e4de9c9d47b491fe17a1f8ca",
+            "folder": "file:///home/paksi/project/Solusi",
+            "backupPath": "/home/paksi/project/Solusi/~/.vscode-root/Backups/49d3077298d06f6407dd496fad811e69",
             "uiState": {
                 "mode": 0,
                 "x": 0,
