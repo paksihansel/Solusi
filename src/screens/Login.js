@@ -7,15 +7,12 @@ import {
     TouchableOpacity,
     Image,
     TextInput,
-    AsyncStorage
-
-
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AppStack from './navigation';
 import axios from 'axios';
 import { Input, TextLink, Loading, Button } from '../components/common';
-
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 export default class Login extends Component {
@@ -54,7 +51,7 @@ export default class Login extends Component {
         this.setState({ error: '', loading: true });
 
         // NOTE Post to HTTPS only in production
-        axios.post("https://19ef5b98.ngrok.io/api/pengguna/login", {
+        axios.post("https://2350abbb.ngrok.io/api/pengguna/login", {
             email: email,
             password: password
         })
@@ -88,8 +85,12 @@ export default class Login extends Component {
                     <Image style={{ width: 150, height: 200 }}
                         source={require('../menu/masuk.png')} />
                 </View>
-
+               
                 <View style={styles.containerForm}>
+
+                <Text style={errorTextStyle}>
+                        {error}
+                    </Text>
 
                     <TextInput style={styles.inputBox}
                         underlineColorAndroid='rgba(0,0,0,0)'
@@ -114,17 +115,11 @@ export default class Login extends Component {
                     /*ref={(input) => this.password = input}*/
                     />
 
-                    <Text style={errorTextStyle}>
-                        {error}
-                    </Text>
-
-                    {!loading ?
+                    
                         <Button onPress={this.loginUser}>
                             Login
                     </Button>
-                        :
-                        <Loading size={'large'} />
-                    }
+                    
 
                 </View>
 
@@ -138,9 +133,9 @@ export default class Login extends Component {
 const styles = {
     container: {
         backgroundColor: '#FAFAFA',
-        flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingTop: 100
     },
 
     signupTextCont: {

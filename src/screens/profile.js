@@ -25,6 +25,7 @@ import {
 import { NavigationActions } from 'react-navigation';
 import { Fonts } from './tabscreen/fonts';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-community/async-storage';
 
 
 
@@ -38,6 +39,20 @@ export default class Profile extends Component{
   onButtonPress = () => {
     this.props.navigation.navigate('Login')
  }
+
+
+ _loguot = async() => {
+  var value = await AsyncStorage.getItem('id');
+  if (value !== null) {
+      this.props.navigation.navigate('Login')
+  }
+}
+ _handleLogOut = () => {
+  AsyncStorage.removeItem('id');
+  alert('You have been logged out.');
+  this.props.navigation.navigate('Login');
+}
+
 
   render(){
     return(
@@ -96,14 +111,7 @@ export default class Profile extends Component{
        
         <TouchableOpacity 
           style={{marginHorizontal: 10, paddingTop:10, paddingBottom:20,  backgroundColor: 'white', marginTop: 10, marginBottom: 10}}
-          onPress={() => Alert.alert(
-            'Logout',
-            alertMessage,
-            [
-              {text: 'Cancel', onPress: () => console.log('Cancel Pressed!')},
-              {text: 'OK', onPress: () => this.onButtonPress()},
-            ]
-          )}
+          onPress={this._handleLogOut}
           >
           
           <View style={{alignItems: 'center', justifyContent: 'center',}}>

@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import { Image } from 'react-native';
-import { createAppContainer, createStackNavigator, NavigationAction } from 'react-navigation';
-
 
 import Login from './Login';
-
 import Home from './Home';
 import News from './news';
 import Profile from './profile';
@@ -22,13 +19,9 @@ import VisiMisi from './visimisi';
 import About from './about';
 import Rpassword from './r_password';
 
-
-
-const RootStack = createStackNavigator(
-  {
-    Login: {
-      screen: Login,
-    },
+import { createSwitchNavigator, createStackNavigator, createAppContainer } from 'react-navigation';
+ 
+const AppStack = createStackNavigator({ 
     Home: {
       screen: Home,
     },
@@ -76,19 +69,30 @@ const RootStack = createStackNavigator(
     },
     Rpassword: {
       screen: Rpassword,
+    } });
+
+
+const AuthStack = createStackNavigator({
+     Login:{
+      screen:Login
     }
-  },
-  
+     }, 
+     { headerMode: 'none' });
+ 
+const AppContaner =  createAppContainer(createSwitchNavigator(
   {
-    initialRouteName: 'Login',
-    headerMode: null  
+    App: AppStack,
+    Auth: AuthStack,
+  },
+  {
+    initialRouteName: 'Auth',
   }
-);
-
-const AppContainer = createAppContainer(RootStack);
-
-export default class App extends Component {
+));
+export default class App extends React.Component {
+   
   render() {
-    return <AppContainer />;
+    return (
+      <AppContaner />
+    );
   }
 }

@@ -18,18 +18,23 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  Button
+  Button,
+  BackHandler
 } from 'react-native';
 
 import * as Progress from 'react-native-progress';
 import { Fonts } from './tabscreen/fonts';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import AsyncStorage from '@react-native-community/async-storage';
+
 
 
 export default class Home extends Component{
   static navigationOptions = {
     header: null,
   }
+
+
 
   state = {
     modalVisible: false,
@@ -38,15 +43,19 @@ export default class Home extends Component{
   setModalVisible(visible) {
     this.setState({modalVisible: visible});
   }
+
+ 
   render(){
     return(
+     
+
       <View style={{flex: 1}}>
         {/*Searchbar*/}
   
         
         <View style={{height: 220, width: '100%', backgroundColor: '#48D1CC'}}>
           <Image style={{height: 100, width:200, marginLeft: 20}} source = {require('../icon/logo.png')}/>
-          <Text style={{marginLeft: 20, fontSize: 30, marginTop: 5, color: 'whitesmoke', fontFamily: 'Satisfy-Regular'}}>Hai Dewi</Text>
+          <Text style={{marginLeft: 20, fontSize: 30, marginTop: 5, color: 'whitesmoke', fontFamily: 'Satisfy-Regular'}}>Di isi nama</Text>
           <Text style={{marginLeft: 20, fontSize: 20, marginTop: 5, color: 'whitesmoke'}}>{time}</Text>
         </View>
 

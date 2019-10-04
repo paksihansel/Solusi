@@ -8,7 +8,6 @@
  */
 
 import React, { Component } from 'react';
-let time = new Date().toLocaleString();
 import {
   SafeAreaView,
   StyleSheet,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Test from './src/screens/cuti'
+import Test from './src/screens/navigation'
 
 const App = () => {
    return (
