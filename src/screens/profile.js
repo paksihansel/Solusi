@@ -21,13 +21,13 @@ import {
   Alert,
   alertMessage,
 } from 'react-native';
-
+import axios from 'axios';
 import { NavigationActions } from 'react-navigation';
 import { Fonts } from './tabscreen/fonts';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-community/async-storage';
 
-
+const id = 'id';
 
 export default class Profile extends Component{
 
@@ -36,22 +36,51 @@ export default class Profile extends Component{
   }
 
 
-  onButtonPress = () => {
-    this.props.navigation.navigate('Login')
- }
+  constructor(props){
+    super(props);
 
-
- _loguot = async() => {
-  var value = await AsyncStorage.getItem('id');
-  if (value !== null) {
-      this.props.navigation.navigate('Login')
+    this.state = {
+      isLoggenIn: "",
+      showProgress: false,
+    }
   }
+
+  Token(responseData){
+    AsyncStorage.removeItem(id, responseData, (err)=> {
+      if(err){
+        console.log("an error");
+        throw err;
+      }
+      console.log("success");
+    }).catch((err)=> {
+        console.log("error is: " + err);
+    });
+  }
+
+  logoutUser() {
+    // NOTE Post to HTTPS only in production
+    axios.post("https://08db4248.ngrok.io/api/pengguna/logout?id", {
+    })
+        .then((response) => {
+            //AsyncStorage.setItem('id', response.id);
+            AsyncStorage.removeItem(id);
+            this.props.navigation.navigate('Login');
+            console.log(response);
+        })
+        .catch((error) => {
+            console.log(error);
+            this.onLogoutFail();
+        })
+    .done();
 }
- _handleLogOut = () => {
-  AsyncStorage.removeItem('id');
-  alert('You have been logged out.');
-  this.props.navigation.navigate('Login');
+onLogoutFail() {
+  this.setState({
+      error: 'loogout Failed',
+      loading: false
+  });
 }
+
+
 
 
   render(){
@@ -111,7 +140,7 @@ export default class Profile extends Component{
        
         <TouchableOpacity 
           style={{marginHorizontal: 10, paddingTop:10, paddingBottom:20,  backgroundColor: 'white', marginTop: 10, marginBottom: 10}}
-          onPress={this._handleLogOut}
+          onPress={this.logoutUser.bind(this)}
           >
           
           <View style={{alignItems: 'center', justifyContent: 'center',}}>

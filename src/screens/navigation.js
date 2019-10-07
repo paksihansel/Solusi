@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Image } from 'react-native';
 
+import AuthLoading from './tabscreen/Authloading';
 import Login from './Login';
 import Home from './Home';
 import News from './news';
@@ -81,11 +82,14 @@ const AuthStack = createStackNavigator({
  
 const AppContaner =  createAppContainer(createSwitchNavigator(
   {
+    AuthLoading: {
+      screen:AuthLoading,
+    },
     App: AppStack,
     Auth: AuthStack,
   },
   {
-    initialRouteName: 'Auth',
+    initialRouteName: 'AuthLoading',
   }
 ));
 export default class App extends React.Component {

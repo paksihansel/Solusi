@@ -14,6 +14,7 @@ import axios from 'axios';
 import { Input, TextLink, Loading, Button } from '../components/common';
 import AsyncStorage from '@react-native-community/async-storage';
 
+const id = 'id';
 
 export default class Login extends Component {
 
@@ -21,6 +22,8 @@ export default class Login extends Component {
         header: null,
     }
 
+
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -34,16 +37,26 @@ export default class Login extends Component {
         this.onLoginFail = this.onLoginFail.bind(this);
     }
 
-    componentDidMount() {
-        this._login().done();
-    }
+ 
     
-    _login = async() => {
-        var value = await AsyncStorage.getItem('id');
-        if (value !== null) {
-            this.props.navigation.navigate('Home')
-        }
-    }
+    //_login = async() => {
+    //    var value = await AsyncStorage.getItem('id');
+    //    if (value !== null) {
+    //        this.props.navigation.navigate('Home')
+   //    }
+    //}
+
+    storeToken(responseData){
+        AsyncStorage.setItem(id, responseData, (err)=> {
+          if(err){
+            console.log("an error");
+            throw err;
+          }
+          console.log("success");
+        }).catch((err)=> {
+            console.log("error is: " + err);
+        });
+      }
 
     loginUser() {
         const { email, password } = this.state;
@@ -51,12 +64,13 @@ export default class Login extends Component {
         this.setState({ error: '', loading: true });
 
         // NOTE Post to HTTPS only in production
-        axios.post("https://2350abbb.ngrok.io/api/pengguna/login", {
+        axios.post("https://08db4248.ngrok.io/api/pengguna/login", {
             email: email,
             password: password
         })
             .then((response) => {
-                AsyncStorage.setItem('id', response.id);
+                //AsyncStorage.setItem('id', response.id);
+                this.storeToken(id);
                 this.props.navigation.navigate('Home');
                 console.log(response);
             })

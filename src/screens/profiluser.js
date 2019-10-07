@@ -29,7 +29,7 @@ import axios from 'axios';
 import { thisExpression } from '@babel/types';
 import { Item } from 'native-base';
 
-const API_URL = 'https://19ef5b98.ngrok.io';
+const API_URL = 'https://580e3adc.ngrok.io';
 
 export default class ProfileUser extends Component {
 

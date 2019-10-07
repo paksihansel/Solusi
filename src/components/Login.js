@@ -21,15 +21,15 @@ export default class Login extends Component {
   }
 
   loginUser() {
-    const { email, password } = this.state;
+    const { username, password } = this.state;
 
     this.setState({ error: '', loading: true });
 
     // NOTE Post to HTTPS only in production
-    axios.post("https://64de5f70.ngrok.io/api/pengguna/login",{
+    axios.post("https://9cd90143.ngrok.io/api/pengguna/login",{
         email: email,
         password: password
-    })
+    })  
     .then((response) => {
       console.log(response);
       if (response.status === 200) {
@@ -58,7 +58,7 @@ export default class Login extends Component {
   }
 
   render() {
-    const { email, password, error, loading } = this.state;
+    const { username, password, error, loading } = this.state;
     const { form, section, errorTextStyle } = styles;
 
     return (
