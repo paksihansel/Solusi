@@ -46,25 +46,25 @@ export default class Profile extends Component{
           </View>
 
           <View style={{paddingTop:10, paddingBottom:20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column'}}>
-          <TouchableOpacity style={{marginLeft: 10, marginTop: 15, flexDirection: 'row'}}>
+          <View style={{marginLeft: 10, marginTop: 15, flexDirection: 'row'}}>
         <Image source = {require('../icon/divisi.png')} style={{width: 60, height: 50}}/>
           <View style={{flexDirection: 'column', marginLeft: 20}}>
           <Text style={{fontSize: 18, fontWeight:'bold'}}>Divisi</Text>
           <Text style={{fontSize: 18, marginTop: 10}}>Frontend</Text>
           </View>
-        </TouchableOpacity>
+        </View>
         <View style={{marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 10}}/>
 
-        <TouchableOpacity style={{marginLeft: 10, marginTop: 15, flexDirection: 'row'}}>
+        <View style={{marginLeft: 10, marginTop: 15, flexDirection: 'row'}}>
         <Image source = {require('../icon/ketua.png')} style={{width: 50, height: 50}}/>
           <View style={{flexDirection: 'column', marginLeft: 20}}>
           <Text style={{fontSize: 18, fontWeight:'bold'}}>Ketua Divisi</Text>
           <Text style={{fontSize: 18, marginTop: 10}}>M Raflesh</Text>
           </View>
-        </TouchableOpacity>
+        </View>
         <View style={{marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 10}}/>
 
-        <TouchableOpacity style={{marginLeft: 10, marginTop: 15, flexDirection: 'row'}}>
+        <View style={{marginLeft: 10, marginTop: 15, flexDirection: 'row'}}>
         <Image source = {require('../icon/anggota.png')} style={{width: 60, height: 45}}/>
           <View style={{flexDirection: 'column', marginLeft: 20}}>
           <Text style={{fontSize: 18, fontWeight:'bold'}}>Anggota</Text>
@@ -73,7 +73,7 @@ export default class Profile extends Component{
           <Text style={{fontSize: 18, marginTop: 10}}>Tri Turut</Text>
 
           </View>
-        </TouchableOpacity>
+        </View>
        </View> 
           
 

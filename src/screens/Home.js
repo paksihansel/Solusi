@@ -25,9 +25,10 @@ import {
 import { Fonts } from './tabscreen/fonts';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-community/async-storage';
+import axios from 'axios';
 
+const BASEURL = 'https://d9d9abd8.ngrok.io'
 
-const id = 'id';
 
 
 export default class Home extends Component {
@@ -35,37 +36,38 @@ export default class Home extends Component {
     header: null,
   }
 
- // state = {
- //   modalVisible: false,
- // };
-//
- // setModalVisible(visible) {
-//    this.setState({ modalVisible: visible });
- // }
+
 
   constructor(props) {
     super(props);
 
     this.state = {
       isLoggenIn: "",
-      id: "",
+      data: "",
+      Id:""
     }
   }
 
-  async getid() {
-    try {
-      let id = await AsyncStorage.getItem(id);
-      if (!id) {
-        this.props.navigation.navigate('Login');
-      } else {
-        this.setState({ id: id });
-        console.log("Berhasil gays");
-      }
-    } catch (error) {
-      console.log("Something went wrong");
-      this.props.navigation.navigate('Login');
+  componentDidMount = async() => {
+    const id = await AsyncStorage.getItem('user');
+    const urlp = `${BASEURL}/api/pengguna/${id}/profil?access_token=` + await AsyncStorage.getItem('auth');
+    axios.get(urlp, {
+    })
+      .then((response) => {
+        //handle success
+        const data = response.data;
+        console.log({ response });
+        this.setState({ data })
+      })
+      .catch(function (error) {
+        //handle error
+        console.log({ error });
+      })
+      .done();
+  
     }
-  }
+
+
 
 
 
@@ -80,8 +82,8 @@ export default class Home extends Component {
 
         <View style={{ height: 220, width: '100%', backgroundColor: '#48D1CC' }}>
           <Image style={{ height: 100, width: 200, marginLeft: 20 }} source={require('../icon/logo.png')} />
-          <Text style={{ marginLeft: 20, fontSize: 30, marginTop: 5, color: 'whitesmoke', fontFamily: 'Satisfy-Regular' }}>Di isi nama</Text>
-          <Text style={{ marginLeft: 20, fontSize: 20, marginTop: 5, color: 'whitesmoke' }}>{time}</Text>
+          <Text style={{ marginLeft: 20, fontSize: 30, marginTop: 5, color: 'whitesmoke', fontFamily: 'Satisfy-Regular' }}>{this.state.data.nama} ({this.state.data.inisial})</Text>
+          <Text style={{ marginLeft: 20, fontSize: 20, marginTop: 5, color: 'whitesmoke' }}>{this.state.data.tim}</Text>
         </View>
 
 

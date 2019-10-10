@@ -1,0 +1,140 @@
+file:///home/paksi/project/Solusi/src/screens/tabscreen/backupfile {"mtime":1570681459338,"size":3880,"etag":"341grp8ga415","orphaned":false}
+ // syntax tanggal di file cuti.js
+  <Text style={{ fontSize: 15 }}> Tanggal Cuti</Text>
+            <View style={{ flexDirection: 'column' }}>
+              <DatePicker
+                style={{ width: 200 }}
+                date={this.state.mulai_cuti}
+                mode="date"
+                placeholder="start date"
+                placeholderTextColor="black"
+                format="YYYY-MM-DD"
+                minDate="2016-05-01"
+                maxDate="2020-06-01"
+                confirmBtnText="Confirm"
+                cancelBtnText="Cancel"
+                customStyles={{
+                  dateInput: {
+                    marginLeft: 20,
+                    borderColor: 'black',
+                    backgroundColor: 'white'
+
+                  }
+                }}
+                value={mulai_cuti}
+                onDateChange={(mulai_cuti) => { this.setState({ mulai_cuti }) }}
+              />
+
+              <DatePicker
+                style={{ width: 200, marginTop: 10 }}
+                date={this.state.selesai_cuti}
+                mode="date"
+                placeholder="end date"
+                format="YYYY-MM-DD"
+                minDate="2016-05-01"
+                maxDate="2020-06-01"
+                confirmBtnText="Confirm"
+                cancelBtnText="Cancel"
+                customStyles={{
+                  dateInput: {
+                    marginLeft: 20,
+                    backgroundColor: 'white'
+                  }
+                }}
+                value={selesai_cuti}
+                onDateChange={(selesai_cuti) => { this.setState({ selesai_cuti }) }}
+              />
+            </View>
+            \
+
+
+
+{
+  "id_pengguna": 12,
+  "nik": 45678,
+  "nama": "baidarus",
+  "inisial": "bai",
+  "jenis_kelamin": "Perempuan",
+  "posisi_karyawan": "Officer",
+  "kantor": "string",
+  "tgl_lahir": "2019-09-01",
+  "tempat_lahir": "Yogyakarta",
+  "alamat": "Baciro",
+  "email": "baidii@gmail.com",
+  "telepon_rumah": 34567,
+  "no_telepon": 345678,
+  "no_telepon_lainnya": 345678,
+  "ibu_kandung": "Mama Baid",
+  "tgl_masuk": "2019-09-28",
+  "status_karyawan": "Percobaan 2 Bulan",
+  "agama": "Islam",
+  "status_pernikahan": "M3",
+  "golongan_darah": "O",
+  "bank": "BCA",
+  "no_rekening": 34567,
+  "cabang": "Sleman",
+  "BPJS": "string",
+  "DPLK": "string",
+  "koperasi": "SOlusi",
+  "asuransi_kesehatan": 0,
+  "nama_darurat": "Paksi",
+  "no_darurat": 234567,
+  "relasi_darurat": "Mother",
+  "nama_pasangan": "Krisna",
+  "tgl_lahir_pasangan": "2019-09-17",
+  "nama_anak1": "Raflesh",
+  "jenis_kelamin_anak1": "Perempuan",
+  "tgl_lahir_anak1": "2019-09-16",
+  "nama_anak2": "string",
+  "jenis_kelamin_anak2": "string",
+  "tgl_lahir_anak2": "2019-09-19",
+  "nama_anak3": "string",
+  "jenis_kelamin_anak3": "string",
+  "tgl_lahir_anak3": "2019-09-19",
+  "nama_anak4": "string",
+  "jenis_kelamin_anak4": "string",
+  "tgl_lahir_anak4": "2019-09-19",
+  "nama_anak5": "string",
+  "jenis_kelamin_anak5": "string",
+  "tgl_lahir_anak5": "2019-09-19",
+  "ktp": "COPY",
+  "no_ktp": 31212,
+  "kk": "COPY",
+  "masa_berlaku": "2019-09-20",
+  "alamat_ktp": "Sorong, Papua",
+  "npwp": "string",
+  "jurusan": "Teknik Komputer dan Jaringan",
+  "pendidikan": "Others",
+  "ijazah": "NONE",
+  "disahkan_oleh": "string",
+  "tgl_pengesahan": "2019-09-19",
+  "gelar": "SMU",
+  "direkomendasikan": "string",
+  "tim": "Backend",
+  "email_1": "string",
+  "email_2": "string"
+}
+
+<View style={{ justifyContent: 'center', alignItems: 'center', marginHorizontal: 10, marginBottom: 30 }}>
+            <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: '#6495ED', marginTop: 30, width: 100, height: 40, borderRadius: 5 }}
+              onPress={this.PostCuti.bind(this)}
+            >
+              <Text style={{ fontSize: 18, fontWeight: 'bold', color: 'white' }}>Submit</Text>
+            </TouchableOpacity>
+          </View>
+
+            <TouchableOpacity style={{ alignItems: 'center', justifyContent: 'center', backgroundColor: '#6495ED', marginTop: 30, width: 100, height: 40, borderRadius: 5 }}
+              onPress={() => alert('Submit Form Sucsees')}
+            >
+
+                       <TextInput
+                style={{ height: 40, width: 150, borderColor: 'red', borderWidth: 1, paddingRight: 3, marginLeft: 20, backgroundColor: 'white', borderRadius: 5 }}
+                placeholder='ex : 2019 - 07 - 01'
+                value={mulai_cuti}
+                onChangeText={mulai_cuti => this.setState({ mulai_cuti })} />
+              <TextInput
+                style={{ height: 40, width: 150, borderColor: 'red', borderWidth: 1, paddingRight: 3, marginLeft: 20, marginTop: 5, backgroundColor: 'white', borderRadius: 5 }}
+                placeholder='ex : 2019 - 07 - 10'
+                value={selesai_cuti}
+                onChangeText={selesai_cuti => this.setState({ selesai_cuti })} />
+          

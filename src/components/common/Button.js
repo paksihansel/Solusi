@@ -18,7 +18,7 @@ const styles = {
   text: {
     alignSelf: 'center',
     color: 'white',
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '700',
     paddingTop: 10,
     paddingBottom: 10
@@ -26,12 +26,12 @@ const styles = {
   button: {
     flex: 1,
     borderWidth: 3,
-    borderColor: 'mediumpurple',
-    backgroundColor: "rebeccapurple",
-    borderRadius: 25,
+    borderColor: 'white',
+    backgroundColor: "#6495ED",
+    borderRadius: 15,
     marginTop: 5,
-    marginLeft: 50,
-    marginRight: 50,
+    marginLeft: 70,
+    marginRight: 70,
     marginBottom: 5
   }
 };

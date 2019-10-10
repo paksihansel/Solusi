@@ -9,85 +9,74 @@ import {
     TextInput,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import AppStack from './navigation';
 import axios from 'axios';
 import { Input, TextLink, Loading, Button } from '../components/common';
 import AsyncStorage from '@react-native-community/async-storage';
 
-const id = 'id';
+const BASEURL = 'https://d9d9abd8.ngrok.io'
 
 export default class Login extends Component {
 
     static navigationOptions = {
         header: null,
     }
-
-
-    
+ 
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
-            password: '',
+            email: 'paksi.hnl@gmail.com',
+            password: 'testerA1!',
             error: '',
-            loading: false
+            loading: false,            
         };
 
         this.loginUser = this.loginUser.bind(this);
-        this.onLoginFail = this.onLoginFail.bind(this);
     }
 
- 
-    
-    //_login = async() => {
-    //    var value = await AsyncStorage.getItem('id');
-    //    if (value !== null) {
-    //        this.props.navigation.navigate('Home')
-   //    }
-    //}
-
     storeToken(responseData){
-        AsyncStorage.setItem(id, responseData, (err)=> {
-          if(err){
-            console.log("an error");
-            throw err;
-          }
-          console.log("success");
-        }).catch((err)=> {
-            console.log("error is: " + err);
-        });
-      }
+        AsyncStorage.setItem('auth', data.id ); 
+        AsyncStorage.setItem('user', data.userId);
+        };
+  
 
-    loginUser() {
-        const { email, password } = this.state;
-
+   loginUser = async() => {
+        const { email, password,  } = this.state;
         this.setState({ error: '', loading: true });
 
-        // NOTE Post to HTTPS only in production
-        axios.post("https://08db4248.ngrok.io/api/pengguna/login", {
+        const url = `${BASEURL}/api/pengguna/login`;
+        axios.post(url, {
             email: email,
             password: password
         })
+
             .then((response) => {
-                //AsyncStorage.setItem('id', response.id);
-                this.storeToken(id);
-                this.props.navigation.navigate('Home');
-                console.log(response);
+                if (response.data.id && response.data.userId) {
+                    AsyncStorage.setItem('auth', response.data.id, (err)=> {
+                        if(err){
+                          console.log("an error");
+                          throw err;
+                        }
+                        console.log("success simpan id = "+" "+ response.data.id);
+                      }).catch((err)=> {
+                          console.log("error  auth is: " + err);
+                      });
+                      AsyncStorage.setItem('user', response.data.userId.toString(), (err)=> {
+                        if(err){
+                          console.log("an error");
+                          throw err;
+                        }
+                        console.log("success simpan user = "+" "+ response.data.userId);
+                      }).catch((err)=> {
+                          console.log("error user is: " + err);
+                      });
+                      this.props.navigation.navigate('Home');
+
+                    }
             })
-            .catch((error) => {
-                console.log(error);
-                this.onLoginFail();
-            })
-        .done();
     }
 
-    onLoginFail() {
-        this.setState({
-            error: 'Login Failed',
-            loading: false
-        });
-    }
 
+   
 
     render() {
         const { email, password, error, loading } = this.state;
@@ -128,11 +117,18 @@ export default class Login extends Component {
                         onChangeText={password => this.setState({ password })}
                     /*ref={(input) => this.password = input}*/
                     />
-
-                    
-                        <Button onPress={this.loginUser}>
-                            Login
+                    <TouchableOpacity style={{marginTop: 5, marginBottom: 10}} 
+                    onPress={() => this.props.navigation.navigate('Forgot')}>
+                        <Text style={{fontSize: 15, color: 'blue'}}>Lupa Password ?</Text>
+                    </TouchableOpacity>
+                  
+                    {!loading ?
+                    <Button onPress={this.loginUser}>
+                    Login
                     </Button>
+                    :
+                    <Loading size={'large'}/>
+                    }
                     
 
                 </View>

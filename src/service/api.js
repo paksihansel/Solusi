@@ -1,3 +1,1 @@
-import axios from 'axios';
-
-const API_URL = 'https://599ae110.ngrok.io';
+export const BASE_URL = 'https://c6958977.ngrok.io'

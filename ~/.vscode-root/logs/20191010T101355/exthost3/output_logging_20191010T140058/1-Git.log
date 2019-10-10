@@ -4,6 +4,26 @@ Using git 2.17.1 from git
 fatal: not a git repository (or any of the parent directories): .git
 > git rev-parse --show-toplevel
 > git rev-parse --show-toplevel
+fatal: not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
 > git rev-parse --show-toplevel
 > git rev-parse --show-toplevel
 > git rev-parse --show-toplevel
@@ -13,22 +33,29 @@ fatal: not a git repository (or any of the parent directories): .git
 > git rev-parse --show-toplevel
 fatal: not a git repository (or any of the parent directories): .git
 > git rev-parse --show-toplevel
-fatal: not a git repository (or any of the parent directories): .git
-> git rev-parse --show-toplevel
-> git rev-parse --show-toplevel
-> git rev-parse --show-toplevel
-> git rev-parse --show-toplevel
-fatal: not a git repository (or any of the parent directories): .git
 > git rev-parse --show-toplevel
 > git rev-parse --show-toplevel
 fatal: not a git repository (or any of the parent directories): .git
 > git rev-parse --show-toplevel
 > git rev-parse --show-toplevel
 > git rev-parse --show-toplevel
-fatal: not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
 > git rev-parse --show-toplevel
 fatal: not a git repository (or any of the parent directories): .git
 > git rev-parse --show-toplevel
-fatal: not a git repository (or any of the parent directories): .git
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
+> git rev-parse --show-toplevel
 > git rev-parse --show-toplevel
 fatal: not a git repository (or any of the parent directories): .git

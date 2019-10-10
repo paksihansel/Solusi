@@ -47,65 +47,7 @@ export default class Task extends Component{
           <Text style={{fontSize: 18, fontWeight: 'bold'}}>My Project</Text>
         </View>
 
-        <TouchableOpacity style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}
-          onPress={() =>this.props.navigation.navigate('SubTask')}
-        >
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text>Membangun Web</Text>
-            <View style={{width: 150, height: 20, borderRadius: 10, backgroundColor: '#42cf89', alignItems: 'center', justifyContent: 'center'}}>
-              <Text>On Progress</Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
-              <Text>3/7 Task</Text>  
-              <Text style={{marginLeft: 10}}>{time}</Text>
-          </View>
-        </TouchableOpacity>
-        
-
-        <TouchableOpacity style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text>Membangun Struktur Data</Text>
-            <View style={{width: 150, height: 20, borderRadius: 10, backgroundColor: '#42cf89', alignItems: 'center', justifyContent: 'center'}}>
-              <Text>On Progress</Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
-              <Text>3/7 Task</Text>  
-              <Text style={{marginLeft: 10}}>{time}</Text>
-          </View>
-        </TouchableOpacity>
-
-
-        <TouchableOpacity style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text>Menyambungkan Server</Text>
-            <View style={{width: 150, height: 20, borderRadius: 10, backgroundColor: '#c33345', alignItems: 'center', justifyContent: 'center'}}>
-              <Text>Waiting</Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
-              <Text>3/7 Task</Text>  
-              <Text style={{marginLeft: 10}}>{time}</Text>
-          </View>
-        </TouchableOpacity>
-
-
-
-        <TouchableOpacity style={{flexDirection: 'column', paddingTop: 10, paddingBottom: 10, paddingRight: 10,paddingLeft: 6, marginTop: 10, marginHorizontal: 16, backgroundColor: 'white',borderRadius: 3}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <Text>Upload</Text>
-            <View style={{width: 150, height: 20, borderRadius: 10, backgroundColor: '#c33345', alignItems: 'center', justifyContent: 'center'}}>
-              <Text>Waiting</Text>
-            </View>
-          </View>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
-              <Text>3/7 Task</Text>  
-              <Text style={{marginLeft: 10}}>{time}</Text>
-          </View>
-              
-
-        </TouchableOpacity>
+       
         
        
 

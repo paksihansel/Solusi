@@ -7,7 +7,6 @@
  */
 
 import React, { Component } from 'react';
-let time = new Date().toLocaleString();
 import {
   SafeAreaView,
   StyleSheet,
@@ -24,12 +23,13 @@ import {
 
 import { NavigationActions } from 'react-navigation';
 import { Fonts } from './tabscreen/fonts';
-
+import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios';
 import { thisExpression } from '@babel/types';
 import { Item } from 'native-base';
 
-const API_URL = 'https://580e3adc.ngrok.io';
+const BASEURL = 'https://d9d9abd8.ngrok.io'
+
 
 export default class ProfileUser extends Component {
 
@@ -39,15 +39,25 @@ export default class ProfileUser extends Component {
   state = {
     data: []
   }
-  componentDidMount() {
-    const url = `${API_URL}/api/pengguna/12/profil`;
-    axios.get(url).then(response => response.data)
-      .then((data) => {
-        this.setState({ data: data })
-        console.log(this.state.data)
-      })
-  }
 
+  componentDidMount = async() => {
+  const id = await AsyncStorage.getItem('user');
+  const urlp = `${BASEURL}/api/pengguna/${id}/profil?access_token=` + await AsyncStorage.getItem('auth');
+  axios.get(urlp, {
+  })
+    .then((response) => {
+      //handle success
+      const data = response.data;
+      console.log({ response });
+      this.setState({ data })
+    })
+    .catch(function (error) {
+      //handle error
+      console.log({ error });
+    })
+    .done();
+
+  }
 
   render() {
 
@@ -65,37 +75,37 @@ export default class ProfileUser extends Component {
           <View style={{ paddingTop: 10, paddingBottom: 20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column' }}>
             <View style={{ marginBottom: 5, marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>Sex</Text>
-              <Text style={{ fontSize: 18 }}>Male</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.jenis_kelamin}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginBottom: 5, marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>Date of Birth</Text>
-              <Text style={{ fontSize: 18 }}>Unknow</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.tgl_lahir}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginBottom: 5, marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>Blood Type</Text>
-              <Text style={{ fontSize: 18 }}>{Item.golongan_darah}</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.golongan_darah}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>Religion</Text>
-              <Text style={{ fontSize: 18 }}>Islam</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.agama}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginBottom: 5, marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>Email</Text>
-              <Text>{data.email}</Text>)
+              <Text>{this.state.data.email}</Text>
         </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginBottom: 5, marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>Phone</Text>
-              <Text style={{ fontSize: 18 }}>087xxxxx</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.no_telepon}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
           </View>
@@ -106,40 +116,40 @@ export default class ProfileUser extends Component {
           <View style={{ paddingTop: 10, paddingBottom: 20, marginTop: 10, marginHorizontal: 10, backgroundColor: 'white', flexDirection: 'column' }}>
             <View style={{ marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>KK</Text>
-              <Text style={{ fontSize: 18 }}>Copy</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.kk}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>KTP</Text>
-              <Text style={{ fontSize: 18 }}>Copy</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.ktp}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>NPWP</Text>
-              <Text style={{ fontSize: 18 }}>12332xxx</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.npwp}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginLeft: 10, flexDirection: 'column', justifyContent: 'space-between', flexGrow: 1, marginRight: 20 }}>
               <Text style={{ fontSize: 15 }}>KTP Number</Text>
               <View style={{ flexDirection: 'row' }}>
-                <Text style={{ fontSize: 18, marginRight: 20 }}>I3434</Text>
-                <Text style={{ fontSize: 18 }}>29 Juni 1999</Text>
+                <Text style={{ fontSize: 18, marginRight: 20 }}>{this.state.data.no_ktp}</Text>
+                <Text style={{ fontSize: 18 }}>{this.state.data.masa_berlaku}</Text>
               </View>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>KTP Address</Text>
-              <Text style={{ fontSize: 18 }}>Jalan Baciro</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.alamat_ktp}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
 
             <View style={{ marginLeft: 10, marginTop: 15, marginRight: 20, flexDirection: 'column', justifyContent: 'space-between' }}>
               <Text style={{ fontSize: 15 }}>Resedrntial Address</Text>
-              <Text style={{ fontSize: 18 }}>Jalan Baciro</Text>
+              <Text style={{ fontSize: 18 }}>{this.state.data.alamat}</Text>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
           </View>
@@ -153,8 +163,8 @@ export default class ProfileUser extends Component {
                 <Text style={{ fontSize: 15 }}>Edicational</Text>
               </View>
               <View style={{ flexDirection: 'row', marginLeft: 10 }}>
-                <Text style={{ fontSize: 18, marginRight: 20 }}>S1</Text>
-                <Text style={{ fontSize: 18 }}>Sistem infromatika</Text>
+                <Text style={{ fontSize: 18, marginRight: 20 }}>{this.state.data.gelar}</Text>
+                <Text style={{ fontSize: 18 }}>{this.state.data.jurusan}</Text>
               </View>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />
@@ -164,8 +174,8 @@ export default class ProfileUser extends Component {
               </View>
 
               <View style={{ flexDirection: 'row', marginLeft: 10 }}>
-                <Text style={{ fontSize: 18, marginRight: 20 }}>S1 ITB</Text>
-                <Text style={{ fontSize: 18 }}>29 Juni 1999</Text>
+                <Text style={{ fontSize: 18, marginRight: 20 }}>{this.state.data.ijazah}</Text>
+                <Text style={{ fontSize: 18 }}>{this.state.data.tgl_pengesahan}</Text>
               </View>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4, marginBottom: 20 }} />
@@ -174,8 +184,8 @@ export default class ProfileUser extends Component {
                 <Text style={{ fontSize: 15 }}>Bank Account</Text>
               </View>
               <View style={{ flexDirection: 'row', marginLeft: 10 }}>
-                <Text style={{ fontSize: 18, marginRight: 20 }}>BNI</Text>
-                <Text style={{ fontSize: 18 }}>9908980xxx</Text>
+                <Text style={{ fontSize: 18, marginRight: 20 }}>{this.state.data.bank}</Text>
+                <Text style={{ fontSize: 18 }}>{this.state.data.no_rekening}</Text>
               </View>
             </View>
             <View style={{ marginLeft: 10, borderBottomColor: 'grey', borderBottomWidth: 1, marginRight: 20, marginTop: 4 }} />

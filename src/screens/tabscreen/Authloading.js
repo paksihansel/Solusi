@@ -4,6 +4,7 @@ import {
   StatusBar,
   StyleSheet,
   View,
+  Image
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -16,19 +17,19 @@ export default class AuthLoadingScreen extends React.Component {
   
     // Fetch the token from storage then navigate to our appropriate place
     _bootstrapAsync = async () => {
-      const id = await AsyncStorage.getItem('id');
-  
+      const auth  = await AsyncStorage.getItem('auth');
+      const user  = await AsyncStorage.getItem('user');
+      
       // This will switch to the App screen or Auth screen and this loading
       // screen will be unmounted and thrown away.
-      this.props.navigation.navigate(id ? 'App' : 'Auth');
+      this.props.navigation.navigate(auth && user ? 'App' : 'Auth');
     };
   
     // Render any loading content that you like here
     render() {
       return (
         <View style={styles.container}>
-          <ActivityIndicator />
-          <StatusBar barStyle="default" />
+          <Image style={{width: 310, height: 100}} source={require('./logo.png')}/>
         </View>
       );
     }
@@ -39,5 +40,6 @@ export default class AuthLoadingScreen extends React.Component {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
+      backgroundColor: 'azure'
     },
   });
